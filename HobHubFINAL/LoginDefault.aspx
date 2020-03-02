@@ -6,6 +6,7 @@
 <head runat="server">
     <title></title>
     <style type="text/css">
+    
         .auto-style1 {
             width: 30%;
             background-color: #000066
@@ -42,7 +43,7 @@
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style2">
-                        <asp:Image ID="imgLogo" runat="server" Height="218px" ImageUrl="~/Images/HobHubLogo.jpeg" Width="208px" />
+                        <asp:Image ID="imgLogo" runat="server" Height="250px" ImageUrl="~/Images/logo_transparent.png" Width="250px" />
                     </td>
                 </tr>
                 <tr>
@@ -71,7 +72,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style3">
-                        <asp:Button ID="btnLogin" runat="server" Height="46px" Text="LOGIN" Width="138px" BackColor="#FF6600" ForeColor="White" OnClick="btnLogin_Click" />
+                        <asp:Button ID="btnLogin" runat="server" Height="46px" Text="LOGIN" Width="138px" BackColor="#FF9900" ForeColor="White" OnClick="btnLogin_Click" />
                     </td>
                 </tr>
                 <tr>

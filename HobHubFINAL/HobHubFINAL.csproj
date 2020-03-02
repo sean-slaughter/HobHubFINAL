@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="HubDefault.aspx" />
+    <Content Include="Images\logo_transparent.png" />
     <Content Include="Images\RegisterPage.jpg" />
     <Content Include="Images\HobHubLogo.jpeg" />
     <Content Include="RegisterDefault.aspx" />

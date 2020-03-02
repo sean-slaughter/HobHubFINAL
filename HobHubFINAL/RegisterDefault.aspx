@@ -52,7 +52,7 @@
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style2">
-                        <asp:Image ID="imgLogo" runat="server" Height="218px" ImageUrl="~/Images/HobHubLogo.jpeg" Width="208px" />
+                        <asp:Image ID="imgLogo" runat="server" Height="266px" ImageUrl="~/Images/logo_transparent.png" Width="277px" />
                     </td>
                 </tr>
                 <tr>
@@ -82,7 +82,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style9">
-                        <asp:Button ID="btnRegister" runat="server" Text="REGISTER" BackColor="#FF6600" BorderStyle="Ridge" ForeColor="White" Height="46px" Width="138px" />
+                        <asp:Button ID="btnRegister" runat="server" Text="REGISTER" BackColor="#FF9900" BorderStyle="Ridge" ForeColor="White" Height="46px" Width="138px" />
                     </td>
                 </tr>
                 <tr>
