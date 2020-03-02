@@ -7,7 +7,7 @@
     <title></title>
     <style type="text/css">
         .auto-style1 {
-            width: 43%;
+            width: 30%;
             height: 527px;
             background-color: #000066;
         }
@@ -62,27 +62,27 @@
                 </tr>
                 <tr>
                     <td class="auto-style8">
-                        <asp:TextBox ID="txtFirstName" runat="server" BackColor="#FFFFCC">First name</asp:TextBox>
+                        <asp:TextBox ID="txtFirstName" runat="server" BackColor="#FFFFCC" ForeColor="Gray">First name</asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style7">
-                        <asp:TextBox ID="txtLastName" runat="server" BackColor="#FFFFCC">Last name</asp:TextBox>
+                        <asp:TextBox ID="txtLastName" runat="server" BackColor="#FFFFCC" ForeColor="Gray">Last name</asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style11">
-                        <asp:TextBox ID="txtUserName" runat="server" OnTextChanged="TextBox3_TextChanged" BackColor="#FFFFCC">Username</asp:TextBox>
+                        <asp:TextBox ID="txtUserName" runat="server" OnTextChanged="TextBox3_TextChanged" BackColor="#FFFFCC" ForeColor="Gray">Username</asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style3">
-                        <asp:TextBox ID="txtPassword" runat="server" BackColor="#FFFFCC">Password</asp:TextBox>
+                        <asp:TextBox ID="txtPassword" runat="server" BackColor="#FFFFCC" ForeColor="Gray">Password</asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style9">
-                        <asp:Button ID="btnRegister" runat="server" Text="REGISTER" BackColor="#FF6600" ForeColor="Black" />
+                        <asp:Button ID="btnRegister" runat="server" Text="REGISTER" BackColor="#FF6600" BorderStyle="Ridge" ForeColor="Black" Height="46px" Width="138px" />
                     </td>
                 </tr>
                 <tr>
