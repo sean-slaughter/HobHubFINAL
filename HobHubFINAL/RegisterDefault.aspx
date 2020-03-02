@@ -6,6 +6,9 @@
 <head runat="server">
     <title></title>
     <style type="text/css">
+        .registerButton{
+            border-radius : 12px;
+        }
         .auto-style1 {
             width: 30%;
             height: 527px;
@@ -24,25 +27,28 @@
         .auto-style4 {
             background-color: #000066;
         }
-        .auto-style7 {
-            text-align: center;
-            height: 33px;
-
-        }
-        .auto-style8 {
-            text-align: center;
-            height: 37px;
-        }
         .auto-style9 {
-            height: 98px;
+            height: 106px;
             text-align: center;
         }
         .auto-style10 {
-            font-size: small;
+            font-size: medium;
         }
-        .auto-style11 {
+        .auto-style12 {
             text-align: center;
-            height: 36px;
+            background-color: #000066;
+            height: 45px;
+        }
+        .auto-style13 {
+            text-align: center;
+            height: 45px;
+        }
+        .auto-style14 {
+            font-size: large;
+        }
+        .auto-style15 {
+            border-radius : 12px;
+            font-size: x-large;
         }
     </style>
 </head>
@@ -61,34 +67,38 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style8">
-                        <asp:TextBox ID="txtFirstName" runat="server" BackColor="#FFFFCC" ForeColor="Gray">First name</asp:TextBox>
+                    <td class="auto-style13">
+                        <asp:TextBox ID="txtFirstName" runat="server" BackColor="#FFFFCC" ForeColor="Gray" Font-Size="Large" Height="27px" Width="215px">First name</asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style7">
-                        <asp:TextBox ID="txtLastName" runat="server" BackColor="#FFFFCC" ForeColor="Gray">Last name</asp:TextBox>
+                    <td class="auto-style13">
+                        <asp:TextBox ID="txtLastName" runat="server" BackColor="#FFFFCC" ForeColor="Gray" CssClass="auto-style14" Height="27px" Width="215px">Last name</asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style11">
-                        <asp:TextBox ID="txtUserName" runat="server" OnTextChanged="TextBox3_TextChanged" BackColor="#FFFFCC" ForeColor="Gray">Username</asp:TextBox>
+                    <td class="auto-style13">
+                        <asp:TextBox ID="txtUserName" runat="server" OnTextChanged="TextBox3_TextChanged" BackColor="#FFFFCC" ForeColor="Gray" CssClass="auto-style14" Height="27px" Width="215px">Username</asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style3">
-                        <asp:TextBox ID="txtPassword" runat="server" BackColor="#FFFFCC" ForeColor="Gray">Password</asp:TextBox>
+                    <td class="auto-style12">
+                        <asp:TextBox ID="txtPassword" runat="server" BackColor="#FFFFCC" ForeColor="Gray" CssClass="auto-style14" Height="27px" Width="215px">Password</asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style9">
-                        <asp:Button ID="btnRegister" runat="server" Text="REGISTER" BackColor="#FF9900" BorderStyle="Ridge" ForeColor="White" Height="46px" Width="138px" />
+                        <asp:Button ID="btnRegister" runat="server" Text="REGISTER" BackColor="#FF9900" BorderColor="#000066" BorderStyle="Ridge" CssClass="auto-style15" ForeColor="White" Height="64px" Width="202px" />
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style3">
                         <asp:HyperLink ID="hpAccount" runat="server" CssClass="auto-style10" ForeColor="#FF6600">I already have an account</asp:HyperLink>
                     </td>
+                </tr>
+                <tr>
+                    <td class="auto-style3">
+                        &nbsp;</td>
                 </tr>
             </table>
         </div>

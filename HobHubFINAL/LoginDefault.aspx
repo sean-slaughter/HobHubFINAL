@@ -6,7 +6,12 @@
 <head runat="server">
     <title></title>
     <style type="text/css">
-    
+        .centerImage{
+            width : auto;
+        }
+        .loginButton {
+            border-radius : 12px;
+        }
         .auto-style1 {
             width: 30%;
             background-color: #000066
@@ -32,8 +37,15 @@
         }
 
         .auto-style6 {
-            font-size: small;
+            font-size: medium;
             background-color: #000066
+        }
+        .auto-style7 {
+            border-radius : 12px;
+            font-size: x-large;
+        }
+        .auto-style8 {
+            font-size: large;
         }
     </style>
 </head>
@@ -51,7 +63,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style3">
-                        <asp:Image ID="imgLoginPage" runat="server" Height="170px" ImageUrl="~/Images/RegisterPage.jpg" Width="320px" />
+                        <asp:Image ID="imgLoginPage" runat="server" Height="170px" ImageUrl="~/Images/RegisterPage.jpg" Width="320px" CssClass="centerImage" />
                     </td>
                 </tr>
                 <tr>
@@ -59,12 +71,12 @@
                 </tr>
                 <tr>
                     <td class="auto-style4">
-                        <asp:TextBox ID="txtUserName" runat="server" BackColor="#FFFFCC" ForeColor="Gray">Username</asp:TextBox>
+                        <asp:TextBox ID="txtUserName" runat="server" BackColor="#FFFFCC" ForeColor="Gray" CssClass="auto-style8" Height="27px" Width="215px">Username</asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style5">
-                        <asp:TextBox ID="txtPassword" runat="server" BackColor="#FFFFCC" ForeColor="Gray">Password</asp:TextBox>
+                        <asp:TextBox ID="txtPassword" runat="server" BackColor="#FFFFCC" ForeColor="Gray" CssClass="auto-style8" Height="27px" Width="215px">Password</asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -72,7 +84,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style3">
-                        <asp:Button ID="btnLogin" runat="server" Height="46px" Text="LOGIN" Width="138px" BackColor="#FF9900" ForeColor="White" OnClick="btnLogin_Click" />
+                        <asp:Button ID="btnLogin" runat="server" Height="64px" Text="LOGIN" Width="208px" BackColor="#FF9900" ForeColor="White" OnClick="btnLogin_Click" BorderColor="#000066" BorderStyle="Ridge" CssClass="auto-style7" />
                     </td>
                 </tr>
                 <tr>
