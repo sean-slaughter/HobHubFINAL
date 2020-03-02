@@ -62,22 +62,22 @@
                 </tr>
                 <tr>
                     <td class="auto-style8">
-                        <asp:TextBox ID="txtFirstName" runat="server">First name</asp:TextBox>
+                        <asp:TextBox ID="txtFirstName" runat="server" BackColor="#FFFFCC">First name</asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style7">
-                        <asp:TextBox ID="txtLastName" runat="server">Last name</asp:TextBox>
+                        <asp:TextBox ID="txtLastName" runat="server" BackColor="#FFFFCC">Last name</asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style11">
-                        <asp:TextBox ID="txtUserName" runat="server" OnTextChanged="TextBox3_TextChanged">Username</asp:TextBox>
+                        <asp:TextBox ID="txtUserName" runat="server" OnTextChanged="TextBox3_TextChanged" BackColor="#FFFFCC">Username</asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style3">
-                        <asp:TextBox ID="txtPassword" runat="server">Password</asp:TextBox>
+                        <asp:TextBox ID="txtPassword" runat="server" BackColor="#FFFFCC">Password</asp:TextBox>
                     </td>
                 </tr>
                 <tr>
