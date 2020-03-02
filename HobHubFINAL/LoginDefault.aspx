@@ -79,7 +79,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style3">
-                        <asp:HyperLink ID="hpRegister" runat="server" CssClass="auto-style6" ForeColor="#FF3300">Don&#39;t have an account?</asp:HyperLink>
+                        <asp:HyperLink ID="hpRegister" runat="server" CssClass="auto-style6" ForeColor="#FF6600">Don&#39;t have an account?</asp:HyperLink>
                     </td>
                 </tr>
                 <tr>
