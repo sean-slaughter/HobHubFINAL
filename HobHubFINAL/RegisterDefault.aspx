@@ -57,7 +57,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style3">
-                        <asp:Image ID="imgRegisterPage" runat="server" CssClass="auto-style4" Height="170px" ImageUrl="~/Images/RegisterPage.jpg" Width="300px" />
+                        <asp:Image ID="imgRegisterPage" runat="server" CssClass="auto-style4" Height="170px" ImageUrl="~/Images/RegisterPage.jpg" Width="318px" />
                     </td>
                 </tr>
                 <tr>
@@ -82,7 +82,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style9">
-                        <asp:Button ID="btnRegister" runat="server" Text="REGISTER" BackColor="#FF6600" BorderStyle="Ridge" ForeColor="Black" Height="46px" Width="138px" />
+                        <asp:Button ID="btnRegister" runat="server" Text="REGISTER" BackColor="#FF6600" BorderStyle="Ridge" ForeColor="White" Height="46px" Width="138px" />
                     </td>
                 </tr>
                 <tr>
