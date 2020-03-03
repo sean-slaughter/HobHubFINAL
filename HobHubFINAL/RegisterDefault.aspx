@@ -18,10 +18,12 @@
             text-align: center;
             height: 258px;
             background-color: #000066;
+            width: 318px;
         }
         .auto-style3 {
             text-align: center;
             background-color: #000066;
+            width: 318px;
         }
 
         .auto-style4 {
@@ -30,6 +32,7 @@
         .auto-style9 {
             height: 106px;
             text-align: center;
+            width: 318px;
         }
         .auto-style10 {
             font-size: medium;
@@ -38,10 +41,12 @@
             text-align: center;
             background-color: #000066;
             height: 45px;
+            width: 318px;
         }
         .auto-style13 {
             text-align: center;
             height: 45px;
+            width: 318px;
         }
         .auto-style14 {
             font-size: large;
@@ -50,10 +55,14 @@
             border-radius : 12px;
             font-size: x-large;
         }
+        .auto-style16 {
+            width: 326px;
+            margin-top: 71px;
+        }
     </style>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form1" runat="server" class="auto-style16">
         <div>
             <table class="auto-style1">
                 <tr>

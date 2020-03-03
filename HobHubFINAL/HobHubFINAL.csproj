@@ -69,9 +69,18 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="HubDefault.aspx" />
+    <Content Include="Images\basketball.png" />
+    <Content Include="Images\crafts.jpg" />
+    <Content Include="Images\fishing.png" />
+    <Content Include="Images\gear.png" />
     <Content Include="Images\logo_transparent.png" />
+    <Content Include="Images\profileicon.png" />
     <Content Include="Images\RegisterPage.jpg" />
     <Content Include="Images\HobHubLogo.jpeg" />
+    <Content Include="Images\roller-skate.png" />
+    <Content Include="Images\settings.png" />
+    <Content Include="Images\skateboard.png" />
+    <Content Include="Images\user %281%29.png" />
     <Content Include="RegisterDefault.aspx" />
     <Content Include="Web.config" />
     <Content Include="LoginDefault.aspx" />

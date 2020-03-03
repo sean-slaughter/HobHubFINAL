@@ -6,9 +6,7 @@
 <head runat="server">
     <title></title>
     <style type="text/css">
-        .centerImage{
-            width : auto;
-        }
+      
         .loginButton {
             border-radius : 12px;
         }
@@ -16,24 +14,29 @@
             width: 30%;
             background-color: #000066
         }
+
         .auto-style2 {
             text-align: center;
             height: 251px;
-            background-color: #000066
+            background-color: #000066;
+            width: 318px;
         }
         .auto-style3 {
             text-align: center;
-            background-color: #000066
+            background-color: #000066;
+            width: 318px;
         }
         .auto-style4 {
             text-align: center;
             height: 47px;
-            background-color: #000066
+            background-color: #000066;
+            width: 318px;
         }
         .auto-style5 {
             text-align: center;
             height: 49px;
-            background-color: #000066
+            background-color: #000066;
+            width: 318px;
         }
 
         .auto-style6 {
@@ -47,6 +50,9 @@
         .auto-style8 {
             font-size: large;
         }
+        .auto-style9 {
+            width: 318px;
+        }
     </style>
 </head>
 <body>
@@ -59,7 +65,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>&nbsp;</td>
+                    <td class="auto-style9"></td>
                 </tr>
                 <tr>
                     <td class="auto-style3">
@@ -67,7 +73,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>&nbsp;</td>
+                    <td class="auto-style9">&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style4">
@@ -80,7 +86,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>&nbsp;</td>
+                    <td class="auto-style9">&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style3">
@@ -88,7 +94,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>&nbsp;</td>
+                    <td class="auto-style9">&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style3">
@@ -96,7 +102,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>&nbsp;</td>
+                    <td class="auto-style9">&nbsp;</td>
                 </tr>
             </table>
         </div>
