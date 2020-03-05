@@ -12,7 +12,7 @@
     <title>Login 2.0</title>
     
 </head>
-<body style ="background-color: #1B2631 ">
+<body style ="background-color: #1B2631">
     <form id="form1" runat="server">
         <div class ="container-fluid align-items-center">
             <div class ="row text-center">
