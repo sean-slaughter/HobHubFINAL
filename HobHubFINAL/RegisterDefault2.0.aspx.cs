@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace HobHubFINAL
 {
-    public partial class LoginDefault3__0 : System.Web.UI.Page
+    public partial class RegisterDefault2__0 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

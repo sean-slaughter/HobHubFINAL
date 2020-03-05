@@ -89,8 +89,8 @@
     <Content Include="Images\settings.png" />
     <Content Include="Images\skateboard.png" />
     <Content Include="Images\user %281%29.png" />
-    <Content Include="LoginDefault3.0.aspx" />
     <Content Include="RegisterDefault.aspx" />
+    <Content Include="RegisterDefault2.0.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -212,13 +212,6 @@
     <Compile Include="LoginDefault2.0.designer.cs">
       <DependentUpon>LoginDefault2.0.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginDefault3.0.aspx.cs">
-      <DependentUpon>LoginDefault3.0.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="LoginDefault3.0.aspx.designer.cs">
-      <DependentUpon>LoginDefault3.0.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="LoginDefault.aspx.cs">
       <DependentUpon>LoginDefault.aspx</DependentUpon>
@@ -240,6 +233,13 @@
     </Compile>
     <Compile Include="LoginDefault2.0.aspx.designer.cs">
       <DependentUpon>LoginDefault2.0.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterDefault2.0.aspx.cs">
+      <DependentUpon>RegisterDefault2.0.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegisterDefault2.0.aspx.designer.cs">
+      <DependentUpon>RegisterDefault2.0.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

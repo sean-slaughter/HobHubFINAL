@@ -12,9 +12,9 @@
     <title>Login 2.0</title>
     
 </head>
-<body style ="background-color: #3e4166">
+<body style ="background-color: #1B2631 ">
     <form id="form1" runat="server">
-        <div class ="container-fluid">
+        <div class ="container-fluid align-items-center">
             <div class ="row text-center">
                 <div class ="col-12">
                     <asp:Image ID="Image1" runat="server" Height="463px" ImageUrl="~/Images/logo_transparent.png" />
@@ -42,7 +42,7 @@
             </div>
             <div class ="row text-center">
                 <div class ="col-12">
-                    <asp:HyperLink ID="hpRegister" runat="server" NavigateUrl="~/RegisterDefault.aspx" Font-Size="Small" >Don't have an account?</asp:HyperLink>
+                    <asp:HyperLink ID="hpRegister" CssClass="hplink" runat="server" NavigateUrl="~/RegisterDefault2.0.aspx" Font-Size="Medium" >Don't have an account?</asp:HyperLink>
                     <br />
                     <br />
                 </div>
