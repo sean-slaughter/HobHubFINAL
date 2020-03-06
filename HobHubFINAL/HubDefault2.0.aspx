@@ -6,15 +6,15 @@
 <head runat="server">
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="Style.css" rel="stylesheet" />
-    <meta charset="utf-8"/> 
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link href="https://fonts.googleapis.com/css?family=Palanquin+Dark&display=swap" rel="stylesheet"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css?family=Palanquin+Dark&display=swap" rel="stylesheet" />
 
     <title></title>
 </head>
 <body>
     <nav class="navbar navbar-dark navbar-expand-sm" style="background-color: #1B2631">
-        <asp:HyperLink class="navbar-brand" runat="server" ImageUrl="~/Images/profiledefault.png" NavigateUrl="~/UserProfileDefault.aspx.designer.cs" ImageHeight="50" ImageWidth="50" ID="hpUserProfileNav"></asp:HyperLink>
+        <asp:HyperLink class="navbar-brand" runat="server" ImageUrl="~/Images/profiledefault.png" NavigateUrl="~/UserProfileDefault.aspx" ImageHeight="50" ImageWidth="50" ID="hpUserProfileNav"></asp:HyperLink>
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -41,7 +41,7 @@
             </div>
             <div class="row text-center">
                 <div class="col-12">
-                    <asp:TextBox ID="txtExplore" CssClass="form-control" placeholder="Search by hobby, item or username" runat="server"></asp:TextBox>        
+                    <asp:TextBox ID="txtExplore" CssClass="form-control" placeholder="Search by hobby, item or username" runat="server"></asp:TextBox>
                 </div>
             </div>
             <div class="row text-center">
@@ -51,17 +51,17 @@
             </div>
             <div class="row" style="margin-left: auto; margin-right: auto; text-align: center;">
                 <div class="col-12">
-                    <asp:FileUpload ID="fuPost" runat="server" CssClass="file-field" style="display: inline-block; padding-bottom :10px;" ForeColor="antiquewhite"/>
+                    <asp:FileUpload ID="fuPost" runat="server" CssClass="file-field" Style="display: inline-block; padding-bottom: 10px;" ForeColor="antiquewhite" />
                 </div>
             </div>
             <div class="row text-center">
                 <div class="col-12">
-                    <asp:TextBox ID="txtPost" CssClass="form-control"  placeholder="Caption" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtPost" CssClass="form-control" placeholder="Caption" runat="server"></asp:TextBox>
                 </div>
             </div>
             <div class="row text-center">
                 <div class="col-12">
-                    <asp:Button ID="btnPost" CssClass="btn-md" runat="server" Text="Submit"  style= "margin-bottom : 50px;" ForeColor="White" BackColor="#FF9900" />
+                    <asp:Button ID="btnPost" CssClass="btn-md" runat="server" Text="Submit" Style="margin-bottom: 50px;" ForeColor="White" BackColor="#FF9900" />
                 </div>
             </div>
             <div class="row text-center">
@@ -72,7 +72,7 @@
             <div class="row text-center">
 
                 <div class="col-12">
-                    <asp:TextBox ID="txtbxPost1" CssClass="textPost" runat ="server" Height="150" Width="300"></asp:TextBox>
+                    <asp:TextBox ID="txtbxPost1" CssClass="textPost" runat="server" Height="150" Width="300"></asp:TextBox>
                 </div>
             </div>
         </div>

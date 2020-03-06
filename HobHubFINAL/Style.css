@@ -15,7 +15,8 @@ body {
     display: inline-block;
 }
 .btn-lg{
-    margin-bottom : 10px;
+    margin-top: 10px !important;
+    margin-bottom : 10px !important;
     display: inline-block;
 }
 .hp-link{
@@ -30,7 +31,7 @@ h1 {
 }
 h2 {
     font-family: 'Palanquin Dark', sans-serif;
-    font-size: 20px;
+    font-size: 35px;
     color: antiquewhite;
     padding-bottom : 10px;
 }
@@ -44,4 +45,15 @@ h2 {
 .textPost{
     margin-top : 10px;
     margin-bottom : 10px;
+}
+.profileLabel {
+    font-family: 'Palanquin Dark', sans-serif;
+    font-size: 20px;
+    color: antiquewhite;
+}
+.profileSideLabel {
+    font-family: 'Palanquin Dark', sans-serif;
+    font-size: 20px;
+    color: antiquewhite;
+    padding-bottom : 15px;
 }

@@ -92,6 +92,7 @@
     <Content Include="Images\skateboard.png" />
     <Content Include="Images\user %281%29.png" />
     <Content Include="InboxDefault.aspx" />
+    <Content Include="Images\photo.png" />
     <Content Include="RegisterDefault.aspx" />
     <Content Include="RegisterDefault2.0.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
