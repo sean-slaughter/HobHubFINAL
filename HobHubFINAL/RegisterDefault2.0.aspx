@@ -11,7 +11,7 @@
     <title></title>
     
 </head>
-<body style ="background-color: #1B2631">
+<body>
     <form id="form1" runat="server">
         <div class ="container-fluid">
             <div class="row text-center">

@@ -69,6 +69,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="MyItemsDefault.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -77,6 +78,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Global.asax" />
     <Content Include="HubDefault.aspx" />
+    <Content Include="HubDefault2.0.aspx" />
     <Content Include="Images\basketball.png" />
     <Content Include="Images\crafts.jpg" />
     <Content Include="Images\fishing.png" />
@@ -89,6 +91,7 @@
     <Content Include="Images\settings.png" />
     <Content Include="Images\skateboard.png" />
     <Content Include="Images\user %281%29.png" />
+    <Content Include="InboxDefault.aspx" />
     <Content Include="RegisterDefault.aspx" />
     <Content Include="RegisterDefault2.0.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -192,10 +195,19 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Images\profiledefault.png" />
+    <Content Include="UserProfileDefault.aspx" />
     <Content Include="Web.config" />
     <Content Include="LoginDefault.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MyItemsDefault.aspx.cs">
+      <DependentUpon>MyItemsDefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyItemsDefault.aspx.designer.cs">
+      <DependentUpon>MyItemsDefault.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -205,6 +217,20 @@
     </Compile>
     <Compile Include="HubDefault.aspx.designer.cs">
       <DependentUpon>HubDefault.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HubDefault2.0.aspx.cs">
+      <DependentUpon>HubDefault2.0.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HubDefault2.0.aspx.designer.cs">
+      <DependentUpon>HubDefault2.0.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InboxDefault.aspx.cs">
+      <DependentUpon>InboxDefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InboxDefault.aspx.designer.cs">
+      <DependentUpon>InboxDefault.aspx</DependentUpon>
     </Compile>
     <Compile Include="LoginDefault2.0.cs">
       <SubType>ASPXCodeBehind</SubType>
@@ -240,6 +266,13 @@
     </Compile>
     <Compile Include="RegisterDefault2.0.aspx.designer.cs">
       <DependentUpon>RegisterDefault2.0.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserProfileDefault.aspx.cs">
+      <DependentUpon>UserProfileDefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserProfileDefault.aspx.designer.cs">
+      <DependentUpon>UserProfileDefault.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

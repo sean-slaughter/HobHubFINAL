@@ -5,6 +5,9 @@
     display : inline-block;
     
 }
+body {
+   background-color: #1B2631;
+}
 
 .label{
     font-size : x-large;
@@ -18,4 +21,27 @@
 .hp-link{
     margin-bottom: 30px;
     display: inline-block;
+}
+h1 {
+    font-family: 'Palanquin Dark', sans-serif;
+    font-size: 75px;
+    color :antiquewhite;
+    padding-bottom : 20px;
+}
+h2 {
+    font-family: 'Palanquin Dark', sans-serif;
+    font-size: 20px;
+    color: antiquewhite;
+    padding-bottom : 10px;
+}
+.file-field{
+    padding-bottom : 10px;
+}
+.imagePost{
+    margin-top : 10px;
+    margin-bottom:10px;
+}
+.textPost{
+    margin-top : 10px;
+    margin-bottom : 10px;
 }
