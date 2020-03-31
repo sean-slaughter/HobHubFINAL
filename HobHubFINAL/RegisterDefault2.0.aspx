@@ -48,7 +48,9 @@
             </div>
             <div class="row text-center">
                 <div class="col-12">
-                    <asp:Button ID="btnRegister" CssClass="btn-lg" runat="server" Text="Submit" BackColor="#FF9900" Font-Size="Larger" ForeColor="White" />
+                    <asp:Label ID="lblError" runat="server" ForeColor="Red"></asp:Label>
+                    <br />
+                    <asp:Button ID="btnRegister" CssClass="btn-lg" runat="server" Text="Submit" BackColor="#FF9900" Font-Size="Larger" ForeColor="White" OnClick="btnRegister_Click" />
                 </div>
             </div>
             <div class="row text-center">
