@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="HubDefault2.0.aspx.cs" Inherits="HobHubFINAL.HubDefault2__0" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="HubDefault2.0.aspx.cs" Inherits="HobHubFINAL.HubDefault2__0" %>
 
 <!DOCTYPE html>
 
@@ -61,7 +61,7 @@
             </div>
             <div class="row text-center">
                 <div class="col-12">
-                    <asp:Button ID="btnPost" CssClass="btn-md" runat="server" Text="Submit" Style="margin-bottom: 50px;" ForeColor="White" BackColor="#FF9900" OnClick="btnPost_Click" />
+                    <asp:Button ID="btnPost" CssClass="btn-md" runat="server" Text="Submit" Style="margin-bottom: 50px;" ForeColor="White" BackColor="#FF9900" />
                 </div>
             </div>
             <div class="row text-center">
