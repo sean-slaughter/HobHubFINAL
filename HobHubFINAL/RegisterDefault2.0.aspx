@@ -50,7 +50,7 @@
                 <div class="col-12">
                     <asp:Label ID="lblError" runat="server" ForeColor="Red"></asp:Label>
                     <br />
-                    <asp:Button ID="btnRegister" CssClass="btn-lg" runat="server" Text="Submit" BackColor="#FF9900" Font-Size="Larger" ForeColor="White" OnClick="btnRegister_Click" />
+                    <asp:Button ID="btnRegister" CssClass="btn-lg" runat="server" Text="Create Account" BackColor="#FF9900" Font-Size="Larger" ForeColor="White" OnClick="btnRegister_Click" />
                 </div>
             </div>
             <div class="row text-center">
