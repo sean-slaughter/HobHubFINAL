@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LoginDefault2.0.aspx.cs" Inherits="HobHubFINAL.WebForm2" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="LoginDefault2.0.aspx.cs" Inherits="HobHubFINAL.WebForm2" %>
 
 <!DOCTYPE html>
 
@@ -10,6 +10,12 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1"/>  
     <title>Login 2.0</title>
+    
+    <style type="text/css">
+        .auto-style1 {
+            color: #CC0000;
+        }
+    </style>
     
 </head>
 <body style ="background-color: #1B2631">
@@ -35,8 +41,9 @@
            
             <div class ="row text-center">
                 <div class ="col-12">
-                    <asp:Button ID="btnLogin" CssClass="btn-lg" runat="server" Text="Login" ForeColor="White" BackColor="#FF9900" />
+                    <asp:Button ID="btnLogin" CssClass="btn-lg" runat="server" Text="Login" ForeColor="White" BackColor="#FF9900" OnClick="btnLogin_Click" />
                     <br />
+                    <asp:Label ID="lblErrorMessage" runat="server" CssClass="auto-style1" Font-Size="Larger"></asp:Label>
                     <br />
                 </div>
             </div>
