@@ -87,75 +87,75 @@ namespace HobHubFINAL
         protected global::System.Web.UI.WebControls.Button btnEditProfile;
 
         /// <summary>
-        /// imgItem1 control.
+        /// hpItem1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgItem1;
+        protected global::System.Web.UI.WebControls.HyperLink hpItem1;
 
         /// <summary>
-        /// imgItem2 control.
+        /// hpItem2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgItem2;
+        protected global::System.Web.UI.WebControls.HyperLink hpItem2;
 
         /// <summary>
-        /// imgItem3 control.
+        /// hpItem3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgItem3;
+        protected global::System.Web.UI.WebControls.HyperLink hpItem3;
 
         /// <summary>
-        /// imgItem4 control.
+        /// hpItem4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgItem4;
+        protected global::System.Web.UI.WebControls.HyperLink hpItem4;
 
         /// <summary>
-        /// Image1 control.
+        /// hpItem5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image1;
+        protected global::System.Web.UI.WebControls.HyperLink hpItem5;
 
         /// <summary>
-        /// Image2 control.
+        /// hpItem6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image2;
+        protected global::System.Web.UI.WebControls.HyperLink hpItem6;
 
         /// <summary>
-        /// Image3 control.
+        /// hpItem7 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image3;
+        protected global::System.Web.UI.WebControls.HyperLink hpItem7;
 
         /// <summary>
-        /// Image4 control.
+        /// hpItem8 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image4;
+        protected global::System.Web.UI.WebControls.HyperLink hpItem8;
     }
 }

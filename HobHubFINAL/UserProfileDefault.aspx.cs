@@ -13,5 +13,16 @@ namespace HobHubFINAL
         {
 
         }
+
+        protected void btnEditItems_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnEditProfile_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("EditProfileInformation.aspx");
+
+        }
     }
 }

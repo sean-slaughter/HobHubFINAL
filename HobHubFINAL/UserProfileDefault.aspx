@@ -37,7 +37,7 @@
                 <div class="col-6">
                     <div class="row text-center">
                         <div class="col-12">
-                            <asp:Image ID="imgProfile" runat="server" ImageUrl="~/Images/profiledefault.png" Height="200px"/>
+                            <asp:Image ID="imgProfile" runat="server" />
                         </div>
                         <div class="col-12">
                             <asp:Label ID="Label1" CssClass="profileLabel" runat="server" Text="[User's] myHub"></asp:Label>
@@ -56,7 +56,7 @@
                             <asp:Label ID="lblProfile3" CssClass="profileSideLabel" runat="server" Text="My rating: []"></asp:Label>
                         </div>
                         <div class="col-12">
-                            <asp:Button ID="btnEditProfile" CssClass="btn-lg" runat="server" Text="Edit my information" ForeColor="antiquewhite" BackColor="#FF9900" />
+                            <asp:Button ID="btnEditProfile" CssClass="btn-lg" runat="server" Text="Edit my information" ForeColor="antiquewhite" BackColor="#FF9900" OnClick="btnEditProfile_Click" />
                         </div>
                     </div>
                 </div>
@@ -68,33 +68,34 @@
             </div>
             <div class="row text-center">
                 <div class="col-3">
-                    <asp:Image ID="imgItem1" runat="server" Height="100px" ImageUrl="~/Images/photo.png" />
+                    
+                    <asp:HyperLink ID="hpItem1" runat="server" ImageUrl="~/Images/photo.png" ImageHeight="100px" NavigateUrl="~/Item.aspx"></asp:HyperLink>
                 </div>
                 <div class="col-3">
-                    <asp:Image ID="imgItem2" runat="server" Height="100px" ImageUrl="~/Images/photo.png" />
+                    <asp:HyperLink ID="hpItem2" runat="server" ImageUrl="~/Images/photo.png" ImageHeight="100px" NavigateUrl="~/Item.aspx"></asp:HyperLink>                
                 </div>
                 <div class="col-3">
-                    <asp:Image ID="imgItem3" runat="server" Height="100px" ImageUrl="~/Images/photo.png" />
+                    <asp:HyperLink ID="hpItem3" runat="server" ImageUrl="~/Images/photo.png" ImageHeight="100px" NavigateUrl="~/Item.aspx"></asp:HyperLink>                
                 </div>
                 <div class="col-3">
-                    <asp:Image ID="imgItem4" runat="server" Height="100px" ImageUrl="~/Images/photo.png" />
+                    <asp:HyperLink ID="hpItem4" runat="server" ImageUrl="~/Images/photo.png" ImageHeight="100px" NavigateUrl="~/Item.aspx"></asp:HyperLink>       
                 </div>
             </div>
             <div class="row text-center">
                 <div class="col-3">
-                    <asp:Image ID="Image1" runat="server" Height="100px" ImageUrl="~/Images/photo.png" />
+                    <asp:HyperLink ID="hpItem5" runat="server" ImageUrl="~/Images/photo.png" ImageHeight="100px" NavigateUrl="~/Item.aspx"></asp:HyperLink>               
+
                 </div>
                 <div class="col-3">
-                    <asp:Image ID="Image2" runat="server" Height="100px" ImageUrl="~/Images/photo.png" />
+                    <asp:HyperLink ID="hpItem6" runat="server" ImageUrl="~/Images/photo.png" ImageHeight="100px" NavigateUrl="~/Item.aspx"></asp:HyperLink>                
                 </div>
                 <div class="col-3">
-                    <asp:Image ID="Image3" runat="server" Height="100px" ImageUrl="~/Images/photo.png" />
+                    <asp:HyperLink ID="hpItem7" runat="server" ImageUrl="~/Images/photo.png" ImageHeight="100px" NavigateUrl="~/Item.aspx"></asp:HyperLink>        
                 </div>
                 <div class="col-3">
-                    <asp:Image ID="Image4" runat="server" Height="100px" ImageUrl="~/Images/photo.png" />
+                    <asp:HyperLink ID="hpItem8" runat="server" ImageUrl="~/Images/photo.png" ImageHeight="100px" NavigateUrl="~/Item.aspx"></asp:HyperLink>            
                 </div>
             </div>
-
         </div>
     </form>
     <script src="Scripts/jquery-3.0.0.js"></script>
