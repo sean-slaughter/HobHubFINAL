@@ -34,66 +34,30 @@
                 </div>
             </div>
             <div class="row text-center">
-                <div class="col-6">
-                    <div class="row text-center">
-                        <div class="col-12">
-                            <asp:Image ID="imgProfile" runat="server" />
-                        </div>
-                        <div class="col-12">
-                            <asp:Label ID="Label1" CssClass="profileLabel" runat="server" Text="[User's] myHub"></asp:Label>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="row text-center">
-                        <div class="col-12">
-                            <asp:Label ID="lblProfile1" CssClass="profileSideLabel" runat="server" Text="My location: []"></asp:Label>
-                        </div>
-                        <div class="col-12">
-                            <asp:Label ID="lblProfile2" CssClass="profileSideLabel" runat="server" Text="My hobbies: []"></asp:Label>
-                        </div>
-                        <div class="col-12">
-                            <asp:Label ID="lblProfile3" CssClass="profileSideLabel" runat="server" Text="My rating: []"></asp:Label>
-                        </div>
-                        <div class="col-12">
-                            <asp:Button ID="btnEditProfile" CssClass="btn-lg" runat="server" Text="Edit my information" ForeColor="antiquewhite" BackColor="#FF9900" OnClick="btnEditProfile_Click" />
-                        </div>
-                    </div>
+                <div class="col-12">
+                    <asp:GridView ID="gvProfile" style="display : inline-block" runat="server"></asp:GridView>
+                    <asp:SqlDataSource ID="SqlDataSourceProfile" runat="server"></asp:SqlDataSource>
                 </div>
             </div>
             <div class="row text-center">
-                <div class="col-12" style="padding-top : 50px">
-                    <h1>my Items</h1>
+                <div class="col-12">
+                    <asp:Button ID="btnEditProfile" CssClass="btn-lg" style="display : inline-block" runat="server" Text="Edit Profile" BackColor="#FF9900" ForeColor="AntiqueWhite"/>
                 </div>
             </div>
             <div class="row text-center">
-                <div class="col-3">
-                    
-                    <asp:HyperLink ID="hpItem1" runat="server" ImageUrl="~/Images/photo.png" ImageHeight="100px" NavigateUrl="~/Item.aspx"></asp:HyperLink>
-                </div>
-                <div class="col-3">
-                    <asp:HyperLink ID="hpItem2" runat="server" ImageUrl="~/Images/photo.png" ImageHeight="100px" NavigateUrl="~/Item.aspx"></asp:HyperLink>                
-                </div>
-                <div class="col-3">
-                    <asp:HyperLink ID="hpItem3" runat="server" ImageUrl="~/Images/photo.png" ImageHeight="100px" NavigateUrl="~/Item.aspx"></asp:HyperLink>                
-                </div>
-                <div class="col-3">
-                    <asp:HyperLink ID="hpItem4" runat="server" ImageUrl="~/Images/photo.png" ImageHeight="100px" NavigateUrl="~/Item.aspx"></asp:HyperLink>       
+                <div class="col-12">
+                    <h1>My Items</h1>
                 </div>
             </div>
             <div class="row text-center">
-                <div class="col-3">
-                    <asp:HyperLink ID="hpItem5" runat="server" ImageUrl="~/Images/photo.png" ImageHeight="100px" NavigateUrl="~/Item.aspx"></asp:HyperLink>               
-
+                <div class="col-12">
+                    <asp:GridView ID="gvItems" style="display : inline-block" runat="server"></asp:GridView>
+                    <asp:SqlDataSource ID="SqlDataSourceItems" runat="server"></asp:SqlDataSource>
                 </div>
-                <div class="col-3">
-                    <asp:HyperLink ID="hpItem6" runat="server" ImageUrl="~/Images/photo.png" ImageHeight="100px" NavigateUrl="~/Item.aspx"></asp:HyperLink>                
-                </div>
-                <div class="col-3">
-                    <asp:HyperLink ID="hpItem7" runat="server" ImageUrl="~/Images/photo.png" ImageHeight="100px" NavigateUrl="~/Item.aspx"></asp:HyperLink>        
-                </div>
-                <div class="col-3">
-                    <asp:HyperLink ID="hpItem8" runat="server" ImageUrl="~/Images/photo.png" ImageHeight="100px" NavigateUrl="~/Item.aspx"></asp:HyperLink>            
+            </div>
+            <div class="row text-center">
+                <div class="col-12">
+                    <asp:Button ID="btnEditItems" CssClass="btn-lg" style="display : inline-block" runat="server" Text="Edit Items" ForeColor="AntiqueWhite" BackColor="#FF9900" />
                 </div>
             </div>
         </div>
