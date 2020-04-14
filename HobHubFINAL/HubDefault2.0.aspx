@@ -46,6 +46,11 @@
             </div>
             <div class="row text-center">
                 <div class="col-12">
+                    <asp:Button ID="btnExplore" CssClass ="btn-md" runat="server" Text="Submit Search" ForeColor="AntiqueWhite" BackColor="#FF9900" />
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-12">
                     <h2>Post</h2>
                 </div>
             </div>
@@ -61,18 +66,13 @@
             </div>
             <div class="row text-center">
                 <div class="col-12">
-                    <asp:Button ID="btnPost" CssClass="btn-md" runat="server" Text="Submit" Style="margin-bottom: 50px;" ForeColor="White" BackColor="#FF9900" />
+                    <asp:Button ID="btnPost" CssClass="btn-md" runat="server" Text="Submit Post" Style="margin-bottom: 50px;" ForeColor="White" BackColor="#FF9900" />
                 </div>
             </div>
             <div class="row text-center">
                 <div class="col-12">
-                    <asp:HyperLink ID="hpPost1" runat="server" CssClass="imagePost" ImageUrl="~/Images/crafts.jpg" ImageHeight="250"></asp:HyperLink>
-                </div>
-            </div>
-            <div class="row text-center">
-
-                <div class="col-12">
-                    <asp:TextBox ID="txtbxPost1" CssClass="textPost" runat="server" Height="150" Width="300"></asp:TextBox>
+                    <asp:GridView ID="gvHubPosts" runat="server"></asp:GridView>
+                    <asp:SqlDataSource ID="SqlDataSourceHubPosts" runat="server"></asp:SqlDataSource>
                 </div>
             </div>
         </div>
