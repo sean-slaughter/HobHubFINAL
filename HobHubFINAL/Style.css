@@ -57,3 +57,17 @@ h2 {
     color: antiquewhite;
     padding-bottom : 15px;
 }
+.edit-items{
+    margin-top : 20px;
+}
+#editprofileh1{
+    margin-bottom : 50px;
+}
+.calandar {
+    display: inline-block;
+    margin-bottom : 15px;
+}
+.imgItem{
+    margin-top : 30px;
+    margin-bottom : 30px;
+}
