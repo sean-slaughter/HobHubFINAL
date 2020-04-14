@@ -11,6 +11,11 @@
     <link href="https://fonts.googleapis.com/css?family=Palanquin+Dark&display=swap" rel="stylesheet" />
 
     <title></title>
+    <style type="text/css">
+        .auto-style1 {
+            color: #FAEBD7;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-dark navbar-expand-sm" style="background-color: #1B2631">
@@ -71,8 +76,17 @@
             </div>
             <div class="row text-center">
                 <div class="col-12">
-                    <asp:GridView ID="gvHubPosts" runat="server"></asp:GridView>
-                    <asp:SqlDataSource ID="SqlDataSourceHubPosts" runat="server"></asp:SqlDataSource>
+                    <asp:GridView ID="gvHubPosts" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CssClass="auto-style1" DataSourceID="SqlDataSourceHubPosts">
+                        <Columns>
+                            <asp:CommandField ShowSelectButton="True" />
+                            <asp:BoundField DataField="PostedDate" HeaderText="Posted Date" SortExpression="PostedDate" />
+                            <asp:BoundField DataField="Caption" HeaderText="Caption" SortExpression="Caption" />
+                            <asp:ImageField DataImageUrlField="Photo" HeaderText="Photo">
+                                <ControlStyle Height="100px" />
+                            </asp:ImageField>
+                        </Columns>
+                    </asp:GridView>
+                    <asp:SqlDataSource ID="SqlDataSourceHubPosts" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [PostedDate], [Photo], [Caption] FROM [Posting]"></asp:SqlDataSource>
                 </div>
             </div>
         </div>
