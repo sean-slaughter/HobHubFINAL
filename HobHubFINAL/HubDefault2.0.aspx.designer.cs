@@ -42,6 +42,15 @@ namespace HobHubFINAL
         protected global::System.Web.UI.WebControls.TextBox txtExplore;
 
         /// <summary>
+        /// btnExplore control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnExplore;
+
+        /// <summary>
         /// fuPost control.
         /// </summary>
         /// <remarks>
@@ -69,21 +78,21 @@ namespace HobHubFINAL
         protected global::System.Web.UI.WebControls.Button btnPost;
 
         /// <summary>
-        /// hpPost1 control.
+        /// gvHubPosts control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hpPost1;
+        protected global::System.Web.UI.WebControls.GridView gvHubPosts;
 
         /// <summary>
-        /// txtbxPost1 control.
+        /// SqlDataSourceHubPosts control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtbxPost1;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceHubPosts;
     }
 }
