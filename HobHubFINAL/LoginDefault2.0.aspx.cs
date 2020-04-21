@@ -4,7 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+using System.Data;
+using System.Data.SqlClient;
+using System.Configuration; 
 namespace HobHubFINAL
 {
     public partial class WebForm2 : System.Web.UI.Page
@@ -60,11 +62,67 @@ namespace HobHubFINAL
             else
             {
                 //Database check for UN/PW goes here
+                // Username password Check
 
+                // get password for give username
+                SqlCommand cmd;
+                string connString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+                SqlConnection conn = new SqlConnection(connString);
+                string sql = "SELECT [Password] FROM [Users] WHERE [UserName] = '" + txtUsername.Text + "'";
+                String value = string.Empty;
+                try
+                {
+                    conn.Open();
+                    cmd = new SqlCommand(sql, conn);
+                    value = Convert.ToString(cmd.ExecuteScalar());
+                    cmd.Dispose();
+                    // TODO:  Remove this 
+                    lblErrorMessage.Text="Returned TweetId: " + value.ToString();
+                }
+                catch (Exception ex)
+                {
+                    lblErrorMessage.Text = "Error: " + ex.Message;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+                value = value.Trim(' ');
+                if (!value.Equals(txtPassword.Text))
+                {
+                    lblErrorMessage.Text = "Invalid Username or Password";
+                    return;
+                }
+                else
+                {
+                    //login done to main page with cookie
+                    // get user id
+                     connString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+                     conn = new SqlConnection(connString);
+                     sql = "SELECT [UserID] FROM [Users] WHERE [UserName] = '" + txtUsername.Text + "'";
+                     int val=-1;
+                    try
+                    {
+                        conn.Open();
+                        cmd = new SqlCommand(sql, conn);
+                        val = Convert.ToInt32(cmd.ExecuteScalar());
+                        cmd.Dispose();
+                        // TODO:  Remove this 
+                        lblErrorMessage.Text = "Returned TweetId: " + value.ToString();
+                    }
+                    catch (Exception ex)
+                    {
+                        lblErrorMessage.Text = "Error: " + ex.Message;
+                    }
+                    finally
+                    {
+                        conn.Close();
+                    }
+                    // put user id in cookie(-1) if something went wrong 
+                    Response.Cookies["UserID"].Value = (val.ToString());
 
-                // go to hub page for now 
-                //redirect code from page to page (not case sensitive)
-                Response.Redirect("HubDefault2.0.aspx");
+                    Response.Redirect("HubDefault2.0.aspx");
+                }
             }
         }
     }

@@ -5,6 +5,11 @@ using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+// ADO.NET – Add the following .NET Library References to the
+// top section of your class file
+using System.Data;
+using System.Data.SqlClient;
+using System.Configuration; // access to the Web.Config
 
 namespace HobHubFINAL
 {
@@ -17,47 +22,7 @@ namespace HobHubFINAL
 
         protected void btnRegister_Click(object sender, EventArgs e)
         {
-           //input val first name
-            if(txtFirstName.Text == string.Empty)
-            {
-                lblError.Text = "Please do not leave first name blank.";
-                return;
-            }
-            else
-            {
-                lblError.Text = string.Empty;
-            }
-
-            Regex regex = new Regex("^[a-zA-Z]+$");
-            
-            if(!regex.IsMatch(txtFirstName.Text)){
-                lblError.Text = "Please enter only upper and lower case letters.";
-                return;
-            }
-            else
-            {
-                lblError.Text = string.Empty;
-            }
-
-            //input val last name
-            if (txtLastName.Text == string.Empty)
-            {
-                lblError.Text = "Please do not leave last name blank.";
-                return;
-            }
-            else
-            {
-                lblError.Text = string.Empty;
-            }
-                     
-            if (!regex.IsMatch(txtLastName.Text)){
-                lblError.Text = "Please enter only upper and lower case letters.";
-                return;
-            }
-            else
-            {
-                lblError.Text = string.Empty;
-            }
+            lblError.Text = string.Empty;
 
             //input val username
             if (txtUserName.Text == string.Empty)
@@ -114,9 +79,59 @@ namespace HobHubFINAL
                 lblError.Text = string.Empty;
             }
 
+            SqlCommand cmd;
+            string connString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+            SqlConnection conn = new SqlConnection(connString);
+            string sql = "SELECT [UserName] FROM [Users] WHERE [UserName] = '" + txtUserName.Text + "'";
+            string value = string.Empty;
+            try
+            {
+                conn.Open();
+                cmd = new SqlCommand(sql, conn);
+                value = Convert.ToString(cmd.ExecuteScalar());
+                cmd.Dispose();
+            }
+            catch (Exception ex)
+            {
+                lblError.Text = "Error: " + ex.Message;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            // checking if username is used 
+            if (!value.Equals(String.Empty))
+            {
+                lblError.Text="Username already in use. Please select a different username or log in.";
+                return;
+            }
 
 
+            // if not continue with registartion 
+            conn = null;
+            try
+            {
+                connString =
+               ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+                conn = new SqlConnection(connString);
+                String query = String.Format("INSERT INTO [Users] ([UserName], [Password]) VALUES('{0}', '{1}')", txtUserName.Text, txtPassword.Text);
+                cmd = new SqlCommand(query, conn);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                // handle error here
+               lblError.Text="Error: " + ex.Message;
+                return;
+            }
+            finally
+            {
+                conn.Close();
+            }
 
+            //reg done to login page 
+            Response.Redirect("LoginDefault2.0.aspx");
         }
     }
-}
+    }

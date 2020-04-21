@@ -27,12 +27,6 @@
             <div class="form-group">
                 <div class="row text-center">
                     <div class="col-12">
-                        <asp:TextBox ID="txtFirstName" CssClass="form-control" placeholder ="First name" runat="server"></asp:TextBox>
-                    </div>
-                </div>
-                <div class="row text-center">
-                    <div class="col-12">
-                        <asp:TextBox ID="txtLastName" CssClass="form-control" placeholder ="Last name" runat="server"></asp:TextBox>
                     </div>
                 </div>
                 <div class="row text-center">
