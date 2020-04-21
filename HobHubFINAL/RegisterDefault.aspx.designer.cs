@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HobHubFINAL
-{
-
-
-    public partial class RegisterDefault
-    {
-
+namespace HobHubFINAL {
+    
+    
+    public partial class RegisterDefault {
+        
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -22,7 +20,7 @@ namespace HobHubFINAL
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
+        
         /// <summary>
         /// imgLogo control.
         /// </summary>
@@ -31,7 +29,7 @@ namespace HobHubFINAL
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image imgLogo;
-
+        
         /// <summary>
         /// imgRegisterPage control.
         /// </summary>
@@ -40,25 +38,7 @@ namespace HobHubFINAL
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image imgRegisterPage;
-
-        /// <summary>
-        /// txtFirstName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFirstName;
-
-        /// <summary>
-        /// txtLastName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtLastName;
-
+        
         /// <summary>
         /// txtUserName control.
         /// </summary>
@@ -67,7 +47,7 @@ namespace HobHubFINAL
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtUserName;
-
+        
         /// <summary>
         /// txtPassword control.
         /// </summary>
@@ -76,7 +56,7 @@ namespace HobHubFINAL
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPassword;
-
+        
         /// <summary>
         /// btnRegister control.
         /// </summary>
@@ -85,7 +65,7 @@ namespace HobHubFINAL
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnRegister;
-
+        
         /// <summary>
         /// hpAccount control.
         /// </summary>

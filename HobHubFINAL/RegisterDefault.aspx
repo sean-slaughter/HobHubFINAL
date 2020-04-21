@@ -77,13 +77,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style13">
-                        <asp:TextBox ID="txtFirstName" runat="server" BackColor="#FFFFCC" ForeColor="Gray" Font-Size="Large" Height="27px" Width="215px">First name</asp:TextBox>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style13">
-                        <asp:TextBox ID="txtLastName" runat="server" BackColor="#FFFFCC" ForeColor="Gray" CssClass="auto-style14" Height="27px" Width="215px">Last name</asp:TextBox>
-                    </td>
+                        &nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style13">
@@ -97,7 +91,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style9">
-                        <asp:Button ID="btnRegister" runat="server" Text="REGISTER" BackColor="#FF9900" BorderColor="#000066" BorderStyle="Ridge" CssClass="auto-style15" ForeColor="White" Height="64px" Width="202px" />
+                        <asp:Button ID="btnRegister" runat="server" Text="REGISTER" BackColor="#FF9900" BorderColor="#000066" BorderStyle="Ridge" CssClass="auto-style15" ForeColor="White" Height="64px" Width="202px" OnClick="btnRegister_Click" />
                     </td>
                 </tr>
                 <tr>
