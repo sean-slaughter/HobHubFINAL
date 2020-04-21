@@ -51,7 +51,7 @@
             </div>
             <div class="row text-center">
                 <div class="col-12">
-                    <asp:Button ID="btnExplore" CssClass ="btn-md" runat="server" Text="Submit Search" ForeColor="AntiqueWhite" BackColor="#FF9900" />
+                    <asp:Button ID="btnExplore" CssClass ="btn-md" runat="server" Text="Submit Search" ForeColor="AntiqueWhite" BackColor="#FF9900" OnClick="btnExplore_Click" />
                 </div>
             </div>
             <div class="row text-center">
@@ -76,14 +76,9 @@
             </div>
             <div class="row text-center">
                 <div class="col-12">
-                    <asp:GridView ID="gvHubPosts" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CssClass="auto-style1" DataSourceID="SqlDataSourceHubPosts">
+                    <asp:GridView ID="gvHubPosts" runat="server" AllowPaging="True" AllowSorting="True" CssClass="auto-style1">
                         <Columns>
                             <asp:CommandField ShowSelectButton="True" />
-                            <asp:BoundField DataField="PostedDate" HeaderText="Posted Date" SortExpression="PostedDate" />
-                            <asp:BoundField DataField="Caption" HeaderText="Caption" SortExpression="Caption" />
-                            <asp:ImageField DataImageUrlField="Photo" HeaderText="Photo">
-                                <ControlStyle Height="100px" />
-                            </asp:ImageField>
                         </Columns>
                     </asp:GridView>
                     <asp:SqlDataSource ID="SqlDataSourceHubPosts" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [PostedDate], [Photo], [Caption] FROM [Posting]"></asp:SqlDataSource>
