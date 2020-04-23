@@ -30,11 +30,16 @@
         <div class="container-fluid">
             <div class="row text-center">
                 <div class="col-12">
-                    <h1>[ITEM NAME]</h1>
+                    <asp:Label ID="lblItemName" runat="server" Text="Name" Font-Size="100px" ForeColor="AntiqueWhite"></asp:Label>
                 </div>
             </div>
             <div class="row text-center">
                 <div class="col-12"><h2>Description</h2></div>           
+            </div>
+            <div class ="row text-center">
+                <div class ="col-12">
+                    <asp:Label ID="lblDescription" runat="server" Text="Label" ForeColor="AntiqueWhite"></asp:Label>
+                </div>
             </div>
             <div class="row text-center">
                 <div class="col-12">
@@ -45,6 +50,7 @@
                 <div class="col-12">
                     <asp:Button ID="btnEditItem" runat="server" Text="Edit Item" CssClass="btn-lg" ForeColor="AntiqueWhite" BackColor="#FF9900" />
                 </div>
+                
             </div>
             <div class="row text-center">
                 <div class="col-12"><h2>Availability</h2></div>
@@ -54,12 +60,11 @@
                     <asp:Calendar ID="cldAvailability" CssClass="calandar" runat="server" BackColor="AntiqueWhite"></asp:Calendar>
                 </div>
             </div>
-              <div class="row text-center">
-                <div class="col-12">
-                    <asp:Button ID="btnEditAvailability" runat="server" Text="Edit Availability" CssClass="btn-lg" ForeColor="AntiqueWhite" BackColor="#FF9900" />
-                </div>
-            </div>
+              
         </div>
     </form>
+    <script src="Scripts/jquery-3.0.0.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/popper.min.js"></script>
 </body>
 </html>

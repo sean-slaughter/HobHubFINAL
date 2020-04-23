@@ -42,13 +42,13 @@ namespace HobHubFINAL
         protected global::System.Web.UI.WebControls.Image imgProfile;
 
         /// <summary>
-        /// fuChangePhoto control.
+        /// fileChangePhoto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fuChangePhoto;
+        protected global::System.Web.UI.WebControls.FileUpload fileChangePhoto;
 
         /// <summary>
         /// btnChangePhoto control.
@@ -60,6 +60,24 @@ namespace HobHubFINAL
         protected global::System.Web.UI.WebControls.Button btnChangePhoto;
 
         /// <summary>
+        /// lblPhotoError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPhotoError;
+
+        /// <summary>
+        /// lblCurrentLocation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCurrentLocation;
+
+        /// <summary>
         /// txtLocation control.
         /// </summary>
         /// <remarks>
@@ -69,13 +87,40 @@ namespace HobHubFINAL
         protected global::System.Web.UI.WebControls.TextBox txtLocation;
 
         /// <summary>
-        /// txtHobbies control.
+        /// lblCurrentHobbies control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtHobbies;
+        protected global::System.Web.UI.WebControls.Label lblCurrentHobbies;
+
+        /// <summary>
+        /// txtAddHobbies control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtAddHobbies;
+
+        /// <summary>
+        /// txtRemoveHobbies control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtRemoveHobbies;
+
+        /// <summary>
+        /// lblInfoError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblInfoError;
 
         /// <summary>
         /// btnEditInfo control.

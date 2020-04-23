@@ -14,6 +14,17 @@
         .auto-style1 {
             color: #FAEBD7
         }
+        .auto-style2 {
+            position: relative;
+            width: 100%;
+            -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+            max-width: 100%;
+            left: 354px;
+            top: -158px;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
     </style>
 </head>
 <body>
@@ -40,56 +51,52 @@
             </div>
             <div class="row text-center">
                 <div class="col-12">
-                    <asp:GridView ID="gvProfile" style="display : inline-block" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CssClass="auto-style1" DataSourceID="SqlDataSourceProfile">
+                       <div class="row text-center">
+                <div class="col-6">
+                    <div class="row text-center">
+                        <div class="col-12">
+                            <asp:Image ID="imgProfile" runat="server" ImageUrl="~/Images/profiledefault.png" Height="200px"/>
+                        </div>
+                        <div class="col-12">
+                            <asp:Label ID="lblUsername" CssClass="profileLabel" runat="server" Text="[User's] myHub"></asp:Label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="row text-center">
+                        <div class="col-12">
+                            <asp:Label ID="lblLocation" CssClass="profileSideLabel" runat="server" Text="My location: []"></asp:Label>
+                        </div>
+                        <div class="col-12">
+                            <asp:Label ID="lblHobbies" CssClass="profileSideLabel" runat="server" Text="My hobbies: []"></asp:Label>
+                        </div>
+                        <div class="col-12">
+                            <asp:Label ID="lblRating" CssClass="profileSideLabel" runat="server" Text="My rating: []"></asp:Label>
+                        </div>
+                        <div class="col-12">
+                            <asp:Button ID="Button1" CssClass="btn-lg" runat="server" Text="Edit my information" ForeColor="antiquewhite" BackColor="#FF9900" OnClick="Button1_Click" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+                    <asp:SqlDataSource ID="SqlDataSourceProfile" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [UserName], [Password], [Location], [ProfileImageURL], [Rating], [UserID] FROM [Users]"></asp:SqlDataSource>
+                </div>
+            </div>
+           
+            <div class="row text-center">
+                <div class="col-12">
+                    <h1>myItems</h1>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-12">
+                    <asp:GridView ID="gvItems" style="display : inline-block" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CssClass="auto-style1" DataSourceID="SqlDataSourceItems" OnSelectedIndexChanged="gvItems_SelectedIndexChanged">
                         <Columns>
-                            <asp:CommandField ShowSelectButton="True" />
-                            <asp:BoundField DataField="UserName" HeaderText="Username" SortExpression="UserName" />
-                            <asp:BoundField DataField="Password" HeaderText="Password" SortExpression="Password" />
-                            <asp:BoundField DataField="Location" HeaderText="Location" SortExpression="Location" />
-                            <asp:BoundField DataField="Rating" HeaderText="Rating" SortExpression="Rating" />
-                            <asp:BoundField DataField="UserName" HeaderText="UserName" SortExpression="UserName" />
-                            <asp:BoundField DataField="Password" HeaderText="Password" SortExpression="Password" />
-                            <asp:BoundField DataField="Location" HeaderText="Location" SortExpression="Location" />
-                            <asp:BoundField DataField="Rating" HeaderText="Rating" SortExpression="Rating" />
-                            <asp:ImageField DataImageUrlField="ProfileImageURL" HeaderText="Profile Picture">
-                                <ControlStyle Height="100px" />
+                            <asp:ImageField>
                             </asp:ImageField>
-                        </Columns>
-                    </asp:GridView>
-                    <asp:SqlDataSource ID="SqlDataSourceProfile" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [UserName], [Password], [Location], [ProfileImageURL], [Rating] FROM [Users]"></asp:SqlDataSource>
-                </div>
-            </div>
-            <div class="row text-center">
-                <div class="col-12">
-                    <asp:Button ID="btnEditProfile" CssClass="btn-lg" style="display : inline-block" runat="server" Text="Edit Profile" BackColor="#FF9900" ForeColor="AntiqueWhite"/>
-                </div>
-            </div>
-            <div class="row text-center">
-                <div class="col-12">
-                    <h1>My Items</h1>
-                </div>
-            </div>
-            <div class="row text-center">
-                <div class="col-12">
-                    <asp:GridView ID="gvItems" style="display : inline-block" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CssClass="auto-style1" DataSourceID="SqlDataSourceItems">
-                        <Columns>
-                            <asp:CommandField ShowSelectButton="True" />
                             <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
                             <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
-                            <asp:BoundField DataField="StartAvailableDate" HeaderText="StartAvailableDate" SortExpression="StartAvailableDate" />
-                            <asp:BoundField DataField="EndAvailableDate" HeaderText="EndAvailableDate" SortExpression="EndAvailableDate" />
-                            <asp:ImageField DataImageUrlField="ImageURL1" HeaderText="Image 1">
-                                <ControlStyle Height="100px" />
-                            </asp:ImageField>
-                            <asp:ImageField DataImageUrlField="ImageURL2" HeaderText="Image 2">
-                                <ControlStyle Height="100px" />
-                            </asp:ImageField>
-                            <asp:ImageField DataImageUrlField="ImageURL3" HeaderText="Image 3">
-                                <ControlStyle Height="100px" />
-                            </asp:ImageField>
-                            <asp:ImageField DataImageUrlField="ImageURL4" HeaderText="Image 4">
-                                <ControlStyle Height="100px" />
-                            </asp:ImageField>
+                            <asp:HyperLinkField Text="See More Info" />
                         </Columns>
                     </asp:GridView>
                     <asp:SqlDataSource ID="SqlDataSourceItems" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [Name], [Description], [ImageURL1], [ImageURL2], [ImageURL3], [ImageURL4], [StartAvailableDate], [EndAvailableDate] FROM [Item]"></asp:SqlDataSource>

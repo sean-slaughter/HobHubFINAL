@@ -13,7 +13,7 @@
 </head>
 <body>
      <nav class="navbar navbar-dark navbar-expand-sm" style="background-color: #1B2631">
-        <asp:HyperLink class="navbar-brand" runat="server" ImageUrl="~/Images/profiledefault.png" NavigateUrl="UserProfileDefault.aspx" ImageHeight="50" ImageWidth="50" ID="hpUserProfileNav"></asp:HyperLink>
+        <asp:HyperLink class="navbar-brand profilepic" runat="server" NavigateUrl="UserProfileDefault.aspx" ImageHeight="50" ImageWidth="50" ID="hpUserProfileNav"></asp:HyperLink>
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -37,34 +37,56 @@
                 <div class="col-6">
                     <div class="row text-center">
                         <div class ="col-12">
-                            <asp:Image ID="imgProfile" runat="server" ImageUrl="~/Images/profiledefault.png" Height="200px" />
+                            <asp:Image ID="imgProfile" CssClass ="profilephoto" runat="server" ImageUrl="~/Images/profiledefault.png" Height="200px" />
                         </div>
                     </div>
                     <div class="row text-center">
                         <div class="col-12">
-                            <asp:FileUpload ID="fuChangePhoto" runat="server" />
+                            <asp:FileUpload ID="fileChangePhoto" runat="server" ForeColor="AntiqueWhite" />
                         </div>
                     </div>
                     <div class="row text-center">
                         <div class="col-12">
-                            <asp:Button ID="btnChangePhoto" runat="server" Text="Change Photo" CssClass="btn-sm" BackColor="#FF9900" ForeColor="AntiqueWhite" />
+                            <asp:Button ID="btnChangePhoto" runat="server" Text="Change Photo" CssClass="btn-sm" BackColor="#FF9900" ForeColor="AntiqueWhite" OnClick="btnChangePhoto_Click" />
+                            <asp:Label ID="lblPhotoError" runat="server" Text="" ForeColor="Red"></asp:Label>
                         </div>
                     </div>
                 </div>
                 <div class="col-6">
-                    <div class="row text-center">
+                    <div class ="row text-center">
                         <div class ="col-12">
-                            <asp:TextBox ID="txtLocation" CssClass="form-control" placeholder="My location" runat="server"></asp:TextBox>
+                            <asp:Label ID="lblCurrentLocation" runat="server" Text="Current Location: " ForeColor="AntiqueWhite"></asp:Label>
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        
+                        <div class ="col-12">
+                            <asp:TextBox ID="txtLocation" CssClass="form-control" placeholder="New location" runat="server"></asp:TextBox>
+                        </div>
+                    </div>
+                    <div class ="row text-center">
+                        <div class="col-12">
+                            <asp:Label ID="lblCurrentHobbies" runat="server" Text="Current Hobbies : " ForeColor="AntiqueWhite"></asp:Label>
                         </div>
                     </div>
                     <div class="row text-center">
                         <div class ="col-12">
-                            <asp:TextBox ID="txtHobbies" CssClass="form-control" placeholder="My hobbies" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtAddHobbies" CssClass="form-control" placeholder="Add hobbies" runat="server"></asp:TextBox>
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-12">
+                            <asp:TextBox ID="txtRemoveHobbies" CssClass="form-control" placeholder="Remove hobbies" runat="server"></asp:TextBox>
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-12">
+                            <asp:Label ID="lblInfoError" runat="server" Text="" ForeColor="Red"></asp:Label>
                         </div>
                     </div>
                     <div class="row text-center">
                         <div class ="col-12">
-                            <asp:Button ID="btnEditInfo" runat="server" Text="Update my information"  CssClass="btn-lg" ForeColor="AntiqueWhite" BackColor="#FF9900" />
+                            <asp:Button ID="btnEditInfo" runat="server" Text="Update my information"  CssClass="btn-lg" ForeColor="AntiqueWhite" BackColor="#FF9900" OnClick="btnEditInfo_Click" />
                         </div>
                     </div>
                 </div>
@@ -72,5 +94,8 @@
         </div>
 
     </form>
+    <script src="Scripts/jquery-3.0.0.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/popper.min.js"></script>
 </body>
 </html>

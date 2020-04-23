@@ -69,11 +69,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\HobHub.mdf" />
+    <Content Include="App_Data\HobHub.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="App_Data\HobHub_log.ldf">
       <DependentUpon>HobHub.mdf</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="EditItem.aspx" />
     <Content Include="EditProfileInformation.aspx" />
+    <Content Include="Images\star.png" />
     <Content Include="MyItemsDefault.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -208,6 +213,13 @@
     <Content Include="LoginDefault.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EditItem.aspx.cs">
+      <DependentUpon>EditItem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditItem.aspx.designer.cs">
+      <DependentUpon>EditItem.aspx</DependentUpon>
+    </Compile>
     <Compile Include="EditProfileInformation.aspx.cs">
       <DependentUpon>EditProfileInformation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
