@@ -78,13 +78,13 @@ namespace HobHubFINAL
         protected global::System.Web.UI.WebControls.Label lblRating;
 
         /// <summary>
-        /// Button1 control.
+        /// btnEditInformation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button btnEditInformation;
 
         /// <summary>
         /// SqlDataSourceProfile control.
@@ -96,13 +96,13 @@ namespace HobHubFINAL
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceProfile;
 
         /// <summary>
-        /// gvItems control.
+        /// gridItems control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvItems;
+        protected global::System.Web.UI.WebControls.GridView gridItems;
 
         /// <summary>
         /// SqlDataSourceItems control.
@@ -114,12 +114,84 @@ namespace HobHubFINAL
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceItems;
 
         /// <summary>
-        /// btnEditItems control.
+        /// btnAddNewItem control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEditItems;
+        protected global::System.Web.UI.WebControls.Button btnAddNewItem;
+
+        /// <summary>
+        /// lblAddItems control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAddItems;
+
+        /// <summary>
+        /// fileUploadAddNewItem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload fileUploadAddNewItem;
+
+        /// <summary>
+        /// fileUploadAddNewItem2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload fileUploadAddNewItem2;
+
+        /// <summary>
+        /// fileUploadAddNewItem3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload fileUploadAddNewItem3;
+
+        /// <summary>
+        /// fileUploadAddNewItem4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload fileUploadAddNewItem4;
+
+        /// <summary>
+        /// txtAddItemName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtAddItemName;
+
+        /// <summary>
+        /// txtAddItemDescription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtAddItemDescription;
+
+        /// <summary>
+        /// btnAddItem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAddItem;
     }
 }

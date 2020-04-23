@@ -47,7 +47,7 @@
                     </div>
                     <div class="row text-center">
                         <div class="col-12">
-                            <asp:Button ID="btnChangePhoto" runat="server" Text="Change Photo" CssClass="btn-sm" BackColor="#FF9900" ForeColor="AntiqueWhite" OnClick="btnChangePhoto_Click" />
+                            <asp:Button ID="btnChangePhoto" runat="server" Text="Change Photo" CssClass="btn-sm" BackColor="#FF9900" ForeColor="AntiqueWhite" OnClick="btnChangePhoto_Click" BorderColor="#FF9900" />
                             <asp:Label ID="lblPhotoError" runat="server" Text="" ForeColor="Red"></asp:Label>
                         </div>
                     </div>
@@ -86,7 +86,7 @@
                     </div>
                     <div class="row text-center">
                         <div class ="col-12">
-                            <asp:Button ID="btnEditInfo" runat="server" Text="Update my information"  CssClass="btn-lg" ForeColor="AntiqueWhite" BackColor="#FF9900" OnClick="btnEditInfo_Click" />
+                            <asp:Button ID="btnEditInfo" runat="server" Text="Update my information"  CssClass="btn-lg" ForeColor="AntiqueWhite" BackColor="#FF9900" OnClick="btnEditInfo_Click" BorderColor="#FF9900" />
                         </div>
                     </div>
                 </div>

@@ -6,24 +6,13 @@
 <head runat="server">
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="Style.css" rel="stylesheet" />
-    <meta charset="utf-8"/> 
-    <meta name="viewport" content="width=device-width, initial-scale=1"/> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="https://fonts.googleapis.com/css?family=Palanquin+Dark&display=swap" rel="stylesheet" />
     <title></title>
     <style type="text/css">
         .auto-style1 {
             color: #FAEBD7
-        }
-        .auto-style2 {
-            position: relative;
-            width: 100%;
-            -ms-flex: 0 0 100%;
-            flex: 0 0 100%;
-            max-width: 100%;
-            left: 354px;
-            top: -158px;
-            padding-left: 15px;
-            padding-right: 15px;
         }
     </style>
 </head>
@@ -51,38 +40,42 @@
             </div>
             <div class="row text-center">
                 <div class="col-12">
-                       <div class="row text-center">
-                <div class="col-6">
+                    <div class="row text-center">
+                        <div class="col-6">
+                            <div class="row text-center">
+                                <div class="col-12">
+                                    <asp:Image ID="imgProfile" runat="server" ImageUrl="~/Images/profiledefault.png" Height="200px" />
+                                </div>
+                                <div class="col-12">
+                                    <asp:Label ID="lblUsername" CssClass="profileLabel" runat="server" Text="[User's] myHub"></asp:Label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="row text-center">
+                                <div class="col-12">
+                                    <asp:Label ID="lblLocation" CssClass="profileSideLabel" runat="server" Text="My location: []"></asp:Label>
+                                </div>
+                                <div class="col-12">
+                                    <asp:Label ID="lblHobbies" CssClass="profileSideLabel" runat="server" Text="My hobbies: []"></asp:Label>
+                                </div>
+                                <div class="col-12">
+                                    <asp:Label ID="lblRating" CssClass="profileSideLabel" runat="server" Text="My rating: []"></asp:Label>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
                     <div class="row text-center">
                         <div class="col-12">
-                            <asp:Image ID="imgProfile" runat="server" ImageUrl="~/Images/profiledefault.png" Height="200px"/>
-                        </div>
-                        <div class="col-12">
-                            <asp:Label ID="lblUsername" CssClass="profileLabel" runat="server" Text="[User's] myHub"></asp:Label>
-                        </div>
+                                    <asp:Button ID="btnEditInformation" CssClass="btn-lg" runat="server" Text="Edit my information" ForeColor="antiquewhite" BackColor="#FF9900" OnClick="BtnEditInformation_Click" BorderColor="#FF9900" />
+                                </div>
                     </div>
-                </div>
-                <div class="col-6">
-                    <div class="row text-center">
-                        <div class="col-12">
-                            <asp:Label ID="lblLocation" CssClass="profileSideLabel" runat="server" Text="My location: []"></asp:Label>
-                        </div>
-                        <div class="col-12">
-                            <asp:Label ID="lblHobbies" CssClass="profileSideLabel" runat="server" Text="My hobbies: []"></asp:Label>
-                        </div>
-                        <div class="col-12">
-                            <asp:Label ID="lblRating" CssClass="profileSideLabel" runat="server" Text="My rating: []"></asp:Label>
-                        </div>
-                        <div class="col-12">
-                            <asp:Button ID="Button1" CssClass="btn-lg" runat="server" Text="Edit my information" ForeColor="antiquewhite" BackColor="#FF9900" OnClick="Button1_Click" />
-                        </div>
-                    </div>
-                </div>
-            </div>
                     <asp:SqlDataSource ID="SqlDataSourceProfile" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [UserName], [Password], [Location], [ProfileImageURL], [Rating], [UserID] FROM [Users]"></asp:SqlDataSource>
                 </div>
             </div>
-           
+
             <div class="row text-center">
                 <div class="col-12">
                     <h1>myItems</h1>
@@ -90,21 +83,62 @@
             </div>
             <div class="row text-center">
                 <div class="col-12">
-                    <asp:GridView ID="gvItems" style="display : inline-block" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CssClass="auto-style1" DataSourceID="SqlDataSourceItems" OnSelectedIndexChanged="gvItems_SelectedIndexChanged">
+                    <asp:GridView ID="gridItems" Style="display: inline-block" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CssClass="auto-style1" DataSourceID="SqlDataSourceItems" OnSelectedIndexChanged="gvItems_SelectedIndexChanged">
                         <Columns>
                             <asp:ImageField>
                             </asp:ImageField>
                             <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
                             <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
-                            <asp:HyperLinkField Text="See More Info" />
+                            <asp:TemplateField ShowHeader="False">
+                                <ItemTemplate>
+                                    <asp:Button ID="btnShowMoreInfo" runat="server" CommandArgument="<%# Container.DataItemIndex %>" CausesValidation="False" CommandName="Select" Text="See More Info" OnCommand="btnShowMoreInfo_Click" BackColor="#FF9900" BorderColor="#FF9900" ForeColor="AntiqueWhite"></asp:Button>
+                                </ItemTemplate>
+                                <ControlStyle BackColor="#FF9900" CssClass="btn-md" ForeColor="AntiqueWhite" />
+                            </asp:TemplateField>
                         </Columns>
                     </asp:GridView>
-                    <asp:SqlDataSource ID="SqlDataSourceItems" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [Name], [Description], [ImageURL1], [ImageURL2], [ImageURL3], [ImageURL4], [StartAvailableDate], [EndAvailableDate] FROM [Item]"></asp:SqlDataSource>
+                    <asp:SqlDataSource ID="SqlDataSourceItems" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Item]"></asp:SqlDataSource>
                 </div>
             </div>
             <div class="row text-center">
                 <div class="col-12">
-                    <asp:Button ID="btnEditItems" CssClass="btn-lg" style="display : inline-block" runat="server" Text="Edit Items" ForeColor="AntiqueWhite" BackColor="#FF9900" />
+                    <asp:Button ID="btnAddNewItem" CssClass="btn-lg" runat="server" Text="Add New Item" ForeColor="AntiqueWhite" BackColor="#FF9900" BorderColor="#FF9900" OnClick="btnAddNewItem_Click" />
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-12">
+                    <asp:Label ID="lblAddItems" style="margin-bottom : 30px;" runat="server" Text="Add up to 4 photos" ForeColor="AntiqueWhite"></asp:Label>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-6">
+                    <asp:FileUpload ID="fileUploadAddNewItem" runat="server" ForeColor="AntiqueWhite" Height="30px" />
+                </div>
+                <div class="col-6">
+                    <asp:FileUpload ID="fileUploadAddNewItem2" runat="server" ForeColor="AntiqueWhite" />
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-6">
+                    <asp:FileUpload ID="fileUploadAddNewItem3" runat="server" ForeColor="AntiqueWhite" />
+                </div>
+                <div class="col-6">
+                    <asp:FileUpload ID="fileUploadAddNewItem4" Style="margin-bottom: 20px;" runat="server" ForeColor="AntiqueWhite" />
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-12">
+                    <asp:TextBox ID="txtAddItemName" placeholder="Item name" CssClass="form-control" runat="server"></asp:TextBox>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-12">
+                    <asp:TextBox ID="txtAddItemDescription" CssClass="form-control" placeholder="Item description" runat="server"></asp:TextBox>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-12">
+                    <asp:Button ID="btnAddItem" CssClass="btn-sm" runat="server" Text="Add To My Items" ForeColor="AntiqueWhite" BackColor="#FF9900" BorderColor="#FF9900" OnClick="btnAddItem_Click" />
                 </div>
             </div>
         </div>
