@@ -85,8 +85,13 @@
                 <div class="col-12">
                     <asp:GridView ID="gridItems" Style="display: inline-block" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CssClass="auto-style1" DataSourceID="SqlDataSourceItems" OnSelectedIndexChanged="gvItems_SelectedIndexChanged">
                         <Columns>
-                            <asp:ImageField>
-                            </asp:ImageField>
+                            <asp:TemplateField HeaderText="Image">
+                                <ItemTemplate>
+                                    <asp:Image ID="Image1" runat="server" Height="100px" Width="100px"
+                                        ImageUrl='<%# "data:Image/png;base64,"
+                    + Convert.ToBase64String((byte[])Eval("Image1")) %>' />
+                                </ItemTemplate>
+                            </asp:TemplateField>
                             <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
                             <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
                             <asp:TemplateField ShowHeader="False">
@@ -95,6 +100,8 @@
                                 </ItemTemplate>
                                 <ControlStyle BackColor="#FF9900" CssClass="btn-md" ForeColor="AntiqueWhite" />
                             </asp:TemplateField>
+                            <asp:ImageField>
+                            </asp:ImageField>
                         </Columns>
                     </asp:GridView>
                     <asp:SqlDataSource ID="SqlDataSourceItems" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Item]"></asp:SqlDataSource>

@@ -8,6 +8,8 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.IO;
+using System.Drawing.Imaging;
+using System.Net;
 
 namespace HobHubFINAL
 {
@@ -162,38 +164,64 @@ namespace HobHubFINAL
         protected void btnAddItem_Click(object sender, EventArgs e)
         {
             //array of photos to be added to database
+            bool photo = false;
             HttpPostedFile[] postedFiles = new HttpPostedFile[4];
             postedFiles[0] = fileUploadAddNewItem.PostedFile;
+            if (postedFiles[0].ContentLength > 1) photo  = true;
             postedFiles[1] = fileUploadAddNewItem2.PostedFile;
+            if (postedFiles[1].ContentLength > 1) photo = true;
             postedFiles[2] = fileUploadAddNewItem3.PostedFile;
+            if (postedFiles[2].ContentLength > 1) photo = true;
             postedFiles[3] = fileUploadAddNewItem4.PostedFile;
+            if (postedFiles[3].ContentLength > 1) photo = true;
+
+
             //other data to be added
             string itemName = txtAddItemName.Text;
             string description = txtAddItemDescription.Text;
             //add new item with item name and description
-            string query1 = "INSERT INTO Item (Name, Description, UserID)" +
+            string addItem = "INSERT INTO Item (Name, Description, UserID)" +
                             " VALUES ('" + itemName + "', '" + description + "' ," + userID +")";
-            string query2 = "SELECT ItemID FROM Item WHERE Name = '" +
+            string getId = "SELECT ItemID FROM Item WHERE Name = '" +
                             itemName + "' AND Description = '" + description + "'";
+            string addItemDefaultPhoto = "INSERT INTO Item (Name, Description, UserID, Image1)" +
+                            "VALUES ('" + itemName + "', '" + description + "' ," + userID + ", @Data)";
             try
             {
                 conn.Open();
-                //insert new item
-                SqlCommand cmd = new SqlCommand(query1, conn);
-                cmd.ExecuteNonQuery();
-                cmd.Dispose();
-                //get item id
-                cmd = new SqlCommand(query2, conn);
-                int id = Convert.ToInt32(cmd.ExecuteScalar());
-                cmd.Dispose();
-                conn.Close();
-                //upload photos
-                for(int i = 0; i < postedFiles.Length; i++)
+
+                if (photo)//if true default photo is not needed
                 {
-                    if(postedFiles[i] != null && postedFiles[i].ContentLength > 1)
+                    //insert new item
+                    SqlCommand cmd = new SqlCommand(addItem, conn);
+                    cmd.ExecuteNonQuery();
+                    cmd.Dispose();
+                    //get item id
+                    cmd = new SqlCommand(getId, conn);
+                    int id = Convert.ToInt32(cmd.ExecuteScalar());
+                    cmd.Dispose();
+                    conn.Close();
+                    //upload photos
+
+                    for (int i = 0; i < postedFiles.Length; i++)
                     {
-                        addPhoto(postedFiles[i], i + 1, id);
+                        if (postedFiles[i] != null && postedFiles[i].ContentLength > 1)
+                        {
+                            addPhoto(postedFiles[i], i + 1, id, photo);
+                        }
                     }
+                }
+                else
+                {
+                    WebClient client = new WebClient();
+                    byte[] defaultPhoto = client.DownloadData("https://clip.cookdiary.net/sites/default/files/" +
+                                                                "wallpaper/camera-icons/" +
+                                                                "445652/camera-icons-transparent-white-445652-6318889.png");
+                    SqlCommand cmd = new SqlCommand(addItemDefaultPhoto, conn);
+                    cmd.Parameters.Add("@Data", SqlDbType.Binary);
+                    cmd.Parameters["@Data"].Value = defaultPhoto;
+                    int output = cmd.ExecuteNonQuery();
+                    if (output != 1) lblUsername.Text = "Error adding default photo";
                 }
             }
             catch(Exception ex)
@@ -209,8 +237,9 @@ namespace HobHubFINAL
 
        
 
-        protected void addPhoto(HttpPostedFile upload, int uploadID, int itemID)
+        protected void addPhoto(HttpPostedFile upload, int uploadID, int itemID, bool photo)
         {
+           
             try
             {
                 conn = new SqlConnection(connString);
