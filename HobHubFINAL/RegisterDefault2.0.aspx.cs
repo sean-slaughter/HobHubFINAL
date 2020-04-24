@@ -10,6 +10,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration; // access to the Web.Config
+using System.Net;
 
 namespace HobHubFINAL
 {
@@ -111,11 +112,16 @@ namespace HobHubFINAL
             conn = null;
             try
             {
-                connString =
+                //load default profile photo
+                WebClient client = new WebClient();
+                byte[] defaultPhoto = client.DownloadData("https://freesvg.org/img/abstract-user-flat-3.png");
+            connString =
                ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
                 conn = new SqlConnection(connString);
-                String query = String.Format("INSERT INTO [Users] ([UserName], [Password]) VALUES('{0}', '{1}')", txtUserName.Text, txtPassword.Text);
+                String query = String.Format("INSERT INTO [Users] ([UserName], [Password], [ProfileImage]) VALUES('{0}', '{1}', @Data)", txtUserName.Text, txtPassword.Text);
                 cmd = new SqlCommand(query, conn);
+                cmd.Parameters.Add("@Data", SqlDbType.Binary);
+                cmd.Parameters["@Data"].Value = defaultPhoto;
                 conn.Open();
                 cmd.ExecuteNonQuery();
             }

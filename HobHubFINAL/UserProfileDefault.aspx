@@ -104,7 +104,11 @@
                             </asp:ImageField>
                         </Columns>
                     </asp:GridView>
-                    <asp:SqlDataSource ID="SqlDataSourceItems" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Item]"></asp:SqlDataSource>
+                    <asp:SqlDataSource ID="SqlDataSourceItems" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Item] WHERE ([UserID] = @UserID)">
+                        <SelectParameters>
+                            <asp:CookieParameter CookieName="UserID" Name="UserID" Type="Int32" />
+                        </SelectParameters>
+                    </asp:SqlDataSource>
                 </div>
             </div>
             <div class="row text-center">
