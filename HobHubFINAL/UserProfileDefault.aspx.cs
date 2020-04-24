@@ -81,11 +81,7 @@ namespace HobHubFINAL
                             imgProfile.Width = 250;
                             imgProfile.Height = 250;
                             imgProfile.Style.Add("border-radius", "50%");
-                            //profile navbar icon
-                            hpUserProfileNav.ImageUrl = imgProfile.ImageUrl;
-                            hpUserProfileNav.Height = 50;
-                            hpUserProfileNav.Width = 50;
-                            hpUserProfileNav.Style.Add("border-radius", "50%");
+                            
                         }
                         else
                         {
@@ -135,13 +131,13 @@ namespace HobHubFINAL
 
         protected void btnShowMoreInfo_Click(object sender, CommandEventArgs e)
         {
-            string name = string.Empty;
+            int itemID = -1;
            if(e.CommandName == "Select"){
                 try
                 {
                     int arg = Convert.ToInt32(e.CommandArgument);
                     GridViewRow row = gridItems.Rows[arg];
-                    name = row.Cells[1].Text;
+                    itemID = Convert.ToInt32(row.Cells[0].Text);
 
                 }
                 catch(Exception ex)
@@ -150,7 +146,7 @@ namespace HobHubFINAL
                 }
                 finally
                 {
-                    Response.Redirect("Item.aspx?item=" + name);
+                    Response.Redirect("Item.aspx?item=" + itemID);
                 }
 
             }

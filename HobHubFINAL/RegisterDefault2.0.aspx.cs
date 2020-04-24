@@ -115,6 +115,7 @@ namespace HobHubFINAL
                 //load default profile photo
                 WebClient client = new WebClient();
                 byte[] defaultPhoto = client.DownloadData("https://freesvg.org/img/abstract-user-flat-3.png");
+                client.Dispose();
             connString =
                ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
                 conn = new SqlConnection(connString);
@@ -124,6 +125,7 @@ namespace HobHubFINAL
                 cmd.Parameters["@Data"].Value = defaultPhoto;
                 conn.Open();
                 cmd.ExecuteNonQuery();
+                cmd.Dispose();
             }
             catch (Exception ex)
             {

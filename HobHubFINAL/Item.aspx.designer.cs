@@ -15,15 +15,6 @@ namespace HobHubFINAL
     {
 
         /// <summary>
-        /// hpUserProfileNav control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hpUserProfileNav;
-
-        /// <summary>
         /// form1 control.
         /// </summary>
         /// <remarks>
@@ -51,13 +42,40 @@ namespace HobHubFINAL
         protected global::System.Web.UI.WebControls.Label lblDescription;
 
         /// <summary>
-        /// imgItem control.
+        /// imgItem1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgItem;
+        protected global::System.Web.UI.WebControls.Image imgItem1;
+
+        /// <summary>
+        /// imgItem2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imgItem2;
+
+        /// <summary>
+        /// imgItem3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imgItem3;
+
+        /// <summary>
+        /// imgItem4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imgItem4;
 
         /// <summary>
         /// btnEditItem control.

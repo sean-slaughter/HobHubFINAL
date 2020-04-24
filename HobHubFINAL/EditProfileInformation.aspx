@@ -13,15 +13,14 @@
 </head>
 <body>
      <nav class="navbar navbar-dark navbar-expand-sm" style="background-color: #1B2631">
-        <asp:HyperLink class="navbar-brand profilepic" runat="server" NavigateUrl="UserProfileDefault.aspx" ImageHeight="50" ImageWidth="50" ID="hpUserProfileNav"></asp:HyperLink>
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse text-right" id="navbarMenu">
+        <div class="collapse navbar-collapse text-left" id="navbarMenu">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a href="MyItemsDefault.aspx" class="nav-link">My Items</a></li>
+                <li class="nav-item"><a href="UserProfileDefault.aspx" class="nav-link">myHub</a></li>
                 <li class="nav-item"><a href="InboxDefault.aspx" class="nav-link">Inbox</a></li>
-                <li class="nav-item"><a href="HubDefault2.0.aspx" class="nav-link">The Hub</a></li>
+                <li class="nav-item"><a href="HubDefault2.0.aspx" class="nav-link">theHub</a></li>
                 <li class="nav-item"><a href="LoginDefault2.0.aspx" class="nav-link">Logout</a></li>
             </ul>
         </div>

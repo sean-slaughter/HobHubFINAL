@@ -18,15 +18,14 @@
 </head>
 <body>
     <nav class="navbar navbar-dark navbar-expand-sm" style="background-color: #1B2631">
-        <asp:HyperLink class="navbar-brand" runat="server" ImageUrl="~/Images/profiledefault.png" NavigateUrl="#" ImageHeight="50" ImageWidth="50" ID="hpUserProfileNav"></asp:HyperLink>
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse text-right" id="navbarMenu">
+        <div class="collapse navbar-collapse text-left" id="navbarMenu">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a href="MyItemsDefault.aspx" class="nav-link">My Items</a></li>
+                <li class="nav-item"><a href="UserProfileDefault.aspx" class="nav-link">myHub</a></li>
                 <li class="nav-item"><a href="InboxDefault.aspx" class="nav-link">Inbox</a></li>
-                <li class="nav-item"><a href="HubDefault2.0.aspx" class="nav-link">The Hub</a></li>
+                <li class="nav-item"><a href="HubDefault2.0.aspx" class="nav-link">theHub</a></li>
                 <li class="nav-item"><a href="LoginDefault2.0.aspx" class="nav-link">Logout</a></li>
             </ul>
         </div>
@@ -85,6 +84,7 @@
                 <div class="col-12">
                     <asp:GridView ID="gridItems" Style="display: inline-block" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CssClass="auto-style1" DataSourceID="SqlDataSourceItems" OnSelectedIndexChanged="gvItems_SelectedIndexChanged">
                         <Columns>
+                            <asp:BoundField DataField="ItemID" HeaderText="Item" />
                             <asp:TemplateField HeaderText="Image">
                                 <ItemTemplate>
                                     <asp:Image ID="Image1" runat="server" Height="100px" Width="100px"
@@ -100,8 +100,6 @@
                                 </ItemTemplate>
                                 <ControlStyle BackColor="#FF9900" CssClass="btn-md" ForeColor="AntiqueWhite" />
                             </asp:TemplateField>
-                            <asp:ImageField>
-                            </asp:ImageField>
                         </Columns>
                     </asp:GridView>
                     <asp:SqlDataSource ID="SqlDataSourceItems" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Item] WHERE ([UserID] = @UserID)">
