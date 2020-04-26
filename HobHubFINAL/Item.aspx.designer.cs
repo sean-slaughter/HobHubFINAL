@@ -42,6 +42,15 @@ namespace HobHubFINAL
         protected global::System.Web.UI.WebControls.Label lblDescription;
 
         /// <summary>
+        /// lblHobbies control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblHobbies;
+
+        /// <summary>
         /// imgItem1 control.
         /// </summary>
         /// <remarks>
@@ -78,6 +87,15 @@ namespace HobHubFINAL
         protected global::System.Web.UI.WebControls.Image imgItem4;
 
         /// <summary>
+        /// cldAvailability control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar cldAvailability;
+
+        /// <summary>
         /// btnEditItem control.
         /// </summary>
         /// <remarks>
@@ -87,12 +105,75 @@ namespace HobHubFINAL
         protected global::System.Web.UI.WebControls.Button btnEditItem;
 
         /// <summary>
-        /// cldAvailability control.
+        /// txtEditName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar cldAvailability;
+        protected global::System.Web.UI.WebControls.TextBox txtEditName;
+
+        /// <summary>
+        /// txtEditDescription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtEditDescription;
+
+        /// <summary>
+        /// txtEditHobby control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtEditHobby;
+
+        /// <summary>
+        /// lblEditAvail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblEditAvail;
+
+        /// <summary>
+        /// calStartDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar calStartDate;
+
+        /// <summary>
+        /// calEndDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar calEndDate;
+
+        /// <summary>
+        /// btnSubmit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSubmit;
+
+        /// <summary>
+        /// btnDelete control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnDelete;
     }
 }

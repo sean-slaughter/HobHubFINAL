@@ -60,11 +60,7 @@ namespace HobHubFINAL
                 imgProfile.Width = 250;
                 imgProfile.Height = 250;
                 imgProfile.Style.Add("border-radius", "50%");
-                //profile navbar icon
-                hpUserProfileNav.ImageUrl = imgProfile.ImageUrl;
-                hpUserProfileNav.Height = 50;
-                hpUserProfileNav.Width = 50;
-                hpUserProfileNav.Style.Add("border-radius", "50%");
+               
 
             }
             catch (Exception ex)
