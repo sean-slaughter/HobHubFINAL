@@ -121,7 +121,7 @@ namespace HobHubFINAL
                     // put user id in cookie(-1) if something went wrong 
                     Response.Cookies["UserID"].Value = (val.ToString());
 
-                    Response.Redirect("HubDefault2.0.aspx");
+                    Response.Redirect("UserProfileDefault.aspx");
                 }
             }
         }
