@@ -69,5 +69,31 @@ namespace HobHubFINAL
             
             
              }
+
+        protected void btnPost_Click(object sender, EventArgs e)
+        {
+           int  userID = Convert.ToInt32(Request.Cookies["UserID"].Value);
+            SqlConnection conn = null;
+            try
+            {
+                string connString =
+                ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+                conn = new SqlConnection(connString);
+                //TODO Image Upload 
+                var query = String.Format("INSERT INTO [posting] ([UserID], [PostedDate], [Photo],[Caption]) VALUES('{0}', '{1}', '{2}','{3}')", userID ,DateTime.Now, fuPost, txtPost.Text);
+                SqlCommand cmd = new SqlCommand(query, conn);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                // handle error here
+               Response.Write("Error: " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
     }
 }

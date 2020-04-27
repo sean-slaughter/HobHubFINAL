@@ -70,14 +70,18 @@
             </div>
             <div class="row text-center">
                 <div class="col-12">
-                    <asp:Button ID="btnPost" CssClass="btn-md" runat="server" Text="Submit Post" Style="margin-bottom: 50px;" ForeColor="White" BackColor="#FF9900" />
+                    <asp:Button ID="btnPost" CssClass="btn-md" runat="server" Text="Submit Post" Style="margin-bottom: 50px;" ForeColor="White" BackColor="#FF9900" OnClick="btnPost_Click" />
                 </div>
             </div>
             <div class="row text-center">
                 <div class="col-12">
-                    <asp:GridView ID="gvHubPosts" runat="server" AllowPaging="True" AllowSorting="True" CssClass="auto-style1">
+                    <asp:GridView ID="gvHubPosts" runat="server" AllowPaging="True" AllowSorting="True" CssClass="auto-style1" AutoGenerateColumns="False" DataSourceID="SqlDataSourceHubPosts">
                         <Columns>
-                            <asp:CommandField ShowSelectButton="True" />
+                            <asp:BoundField DataField="PostedDate" HeaderText="PostedDate" SortExpression="PostedDate" />
+                            <asp:BoundField DataField="Caption" HeaderText="Caption" SortExpression="Caption" />
+                            <asp:ImageField DataImageUrlField="Photo">
+                                <ControlStyle Height="200px" />
+                            </asp:ImageField>
                         </Columns>
                     </asp:GridView>
                     <asp:SqlDataSource ID="SqlDataSourceHubPosts" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [PostedDate], [Photo], [Caption] FROM [Posting]"></asp:SqlDataSource>

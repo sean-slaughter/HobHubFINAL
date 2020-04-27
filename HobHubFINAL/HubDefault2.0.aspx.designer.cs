@@ -7,22 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HobHubFINAL
-{
-
-
-    public partial class HubDefault2__0
-    {
-
-        /// <summary>
-        /// hpUserProfileNav control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hpUserProfileNav;
-
+namespace HobHubFINAL {
+    
+    
+    public partial class HubDefault2__0 {
+        
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -31,7 +20,7 @@ namespace HobHubFINAL
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
+        
         /// <summary>
         /// txtExplore control.
         /// </summary>
@@ -40,7 +29,7 @@ namespace HobHubFINAL
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtExplore;
-
+        
         /// <summary>
         /// btnExplore control.
         /// </summary>
@@ -49,7 +38,7 @@ namespace HobHubFINAL
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnExplore;
-
+        
         /// <summary>
         /// fuPost control.
         /// </summary>
@@ -58,7 +47,7 @@ namespace HobHubFINAL
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload fuPost;
-
+        
         /// <summary>
         /// txtPost control.
         /// </summary>
@@ -67,7 +56,7 @@ namespace HobHubFINAL
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPost;
-
+        
         /// <summary>
         /// btnPost control.
         /// </summary>
@@ -76,7 +65,7 @@ namespace HobHubFINAL
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnPost;
-
+        
         /// <summary>
         /// gvHubPosts control.
         /// </summary>
@@ -85,7 +74,7 @@ namespace HobHubFINAL
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvHubPosts;
-
+        
         /// <summary>
         /// SqlDataSourceHubPosts control.
         /// </summary>
