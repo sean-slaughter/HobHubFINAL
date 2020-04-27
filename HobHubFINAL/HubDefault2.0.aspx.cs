@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -72,19 +73,43 @@ namespace HobHubFINAL
 
         protected void btnPost_Click(object sender, EventArgs e)
         {
-           int  userID = Convert.ToInt32(Request.Cookies["UserID"].Value);
+           int userID = Convert.ToInt32(Request.Cookies["UserID"].Value);
+            string caption = txtPost.Text;
             SqlConnection conn = null;
+            if (fuPost.HasFile)
             try
             {
                 string connString =
                 ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
                 conn = new SqlConnection(connString);
-                //TODO Image Upload 
-                var query = String.Format("INSERT INTO [posting] ([UserID], [PostedDate], [Photo],[Caption]) VALUES('{0}', '{1}', '{2}','{3}')", userID ,DateTime.Now, fuPost, txtPost.Text);
-                SqlCommand cmd = new SqlCommand(query, conn);
-                conn.Open();
-                cmd.ExecuteNonQuery();
-            }
+                
+                    //get image from file upload control
+                    HttpPostedFile post = fuPost.PostedFile;
+                    //make sure it's an image file
+                    string fileExtension = Path.GetExtension(post.FileName);
+                    if(fileExtension == ".jpg" || fileExtension == ".png" || fileExtension == ".bmp" || fileExtension == ".gif")
+                    {
+                        //open sql connection
+                        conn.Open();
+                        //convert photo to byte array
+                        Stream stream = post.InputStream;
+                        BinaryReader read = new BinaryReader(stream);
+                        byte[] photoBytes = read.ReadBytes((int)stream.Length);
+                        //create sql command
+                        string postQuery = "INSERT INTO Posting (UserID, PostedDate, Photo, Caption)" +
+                            " VALUES (" + userID + ", @PostedDate, @Photo, '" + caption + "')";
+                        using(SqlCommand cmd = new SqlCommand(postQuery, conn))
+                        {
+                            //give values to command parameters
+                            cmd.Parameters.Add("@PostedDate", SqlDbType.DateTime);
+                            cmd.Parameters["@PostedDate"].Value = DateTime.Now;
+                            cmd.Parameters.Add("@Photo", SqlDbType.Binary);
+                            cmd.Parameters["@Photo"].Value = photoBytes;
+                            //execute command
+                            cmd.ExecuteNonQuery();
+                        }                        
+                    }
+                }
             catch (Exception ex)
             {
                 // handle error here

@@ -14,6 +14,7 @@
     <style type="text/css">
         .auto-style1 {
             color: #FAEBD7;
+            display: inline-block;
         }
     </style>
 </head>
@@ -75,14 +76,39 @@
             </div>
             <div class="row text-center">
                 <div class="col-12">
-                    <asp:GridView ID="gvHubPosts" runat="server" AllowPaging="True" AllowSorting="True" CssClass="auto-style1" AutoGenerateColumns="False" DataSourceID="SqlDataSourceHubPosts">
+                    <asp:GridView ID="gvHubPosts" runat="server" AllowPaging="True" AllowSorting="True" CssClass="auto-style1" AutoGenerateColumns="False" DataSourceID="SqlDataSourceHubPosts" CellPadding="4" ForeColor="#333333" GridLines="None">
+                        <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                         <Columns>
-                            <asp:BoundField DataField="PostedDate" HeaderText="PostedDate" SortExpression="PostedDate" />
-                            <asp:BoundField DataField="Caption" HeaderText="Caption" SortExpression="Caption" />
-                            <asp:ImageField DataImageUrlField="Photo">
+                            <asp:TemplateField>
+                                <EditItemTemplate>
+                                    <asp:TextBox ID="TextBox2" runat="server" Text='<%# Eval("Photo") %>'></asp:TextBox>
+                                </EditItemTemplate>
+                                <ItemTemplate>
+                                    <asp:Image ID="Image1" runat="server" ImageUrl='<%# "data:Image/png;base64,"
+                    + Convert.ToBase64String((byte[])Eval("Photo")) %>'/>
+                                </ItemTemplate>
                                 <ControlStyle Height="200px" />
-                            </asp:ImageField>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="PostedDate" SortExpression="PostedDate">
+                                <EditItemTemplate>
+                                    <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("PostedDate") %>'></asp:TextBox>
+                                </EditItemTemplate>
+                                <ItemTemplate>
+                                    <asp:Label ID="Label1" runat="server" Text='<%# Bind("PostedDate") %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:BoundField DataField="Caption" HeaderText="Caption" SortExpression="Caption" />
                         </Columns>
+                        <EditRowStyle BackColor="#999999" />
+                        <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                        <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                        <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                        <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                        <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                        <SortedAscendingCellStyle BackColor="#E9E7E2" />
+                        <SortedAscendingHeaderStyle BackColor="#506C8C" />
+                        <SortedDescendingCellStyle BackColor="#FFFDF8" />
+                        <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
                     </asp:GridView>
                     <asp:SqlDataSource ID="SqlDataSourceHubPosts" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [PostedDate], [Photo], [Caption] FROM [Posting]"></asp:SqlDataSource>
                 </div>
