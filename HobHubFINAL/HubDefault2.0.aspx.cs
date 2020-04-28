@@ -37,13 +37,7 @@ namespace HobHubFINAL
             
             if(txtExplore.Text != " ")
             {
-               sql = "SELECT Hobby.Name, Posting.Caption, ItemHobby.ItemID "+
-                    "FROM Hobby INNER JOIN ItemHobby "+
-                    "ON Hobby.HobbyID = ItemHobby.HobbyID INNER JOIN Posting "+
-                    "ON ItemHobby.ItemID = Posting.ItemID "+
-                    "WHERE Hobby.Name LIKE '%"+txtExplore.Text+"%' OR "+
-                    "Posting.Caption LIKE '%"+txtExplore.Text+"%' " +
-                    "ORDER BY  Hobby.Name DESC";
+                sql = "SELECT * FROM Posting WHERE Caption LIKE '%" + txtExplore.Text + "%'";
 
                 try
                 {
@@ -62,7 +56,7 @@ namespace HobHubFINAL
                 {
                     conn.Close();
                 }
-
+                gvHubPosts.DataSourceID = null;
                 gvHubPosts.DataSource = gridTable;
                 gvHubPosts.DataBind();
 
