@@ -10,6 +10,7 @@ using System.Configuration;
 using System.IO;
 using System.Drawing.Imaging;
 using System.Net;
+using System.Diagnostics;
 
 namespace HobHubFINAL
 {
@@ -17,7 +18,7 @@ namespace HobHubFINAL
     {
         SqlConnection conn = null;
         string connString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
-        
+        string username;
         
         
 
@@ -25,13 +26,19 @@ namespace HobHubFINAL
         {
             //check for query string
             int userID = -1;
-            string getUserId = "SELECT UserID from Users WHERE Username = '" + Request.QueryString["Username"] + "'";
-            using(conn = new SqlConnection(connString))
+            if (Request.QueryString["username"] != null)
             {
-                using(SqlCommand cmd = new SqlCommand(getUserId, conn))
+                username = Request.QueryString["username"];
+                string getUserId = "SELECT UserID from Users WHERE Username = '" + Request.QueryString["Username"] + "'";
+                using (conn = new SqlConnection(connString))
                 {
-                    conn.Open();
-                    userID = Convert.ToInt32(cmd.ExecuteScalar());
+                    using (SqlCommand cmd = new SqlCommand(getUserId, conn))
+                    {
+                        conn.Open();
+                        userID = Convert.ToInt32(cmd.ExecuteScalar());
+
+                    }
+                    conn.Close();
                 }
             }
             int cookie = Convert.ToInt32(Request.Cookies["UserID"].Value);
@@ -39,26 +46,13 @@ namespace HobHubFINAL
             {
                 btnEditInformation.Visible = false;
                 btnAddNewItem.Visible = false;
+                gridItems.Visible = false;
             }
             else
             {
                 userID = cookie;
             }
-            //check to see if user is trying to add items
-            if(Request.QueryString["update"] == "true")
-            {
-                btnAddNewItem.Visible = false;
-                lblAddItems.Visible = true;
-                fileUploadAddNewItem.Visible = true;
-                fileUploadAddNewItem2.Visible = true;
-                fileUploadAddNewItem3.Visible = true;
-                fileUploadAddNewItem4.Visible = true;
-                txtAddItemDescription.Visible = true;
-                txtAddItemName.Visible = true;
-                btnAddItem.Visible = true;
-            }
-            else
-            {
+           
                 lblAddItems.Visible = false;
                 fileUploadAddNewItem.Visible = false;
                 fileUploadAddNewItem2.Visible = false;
@@ -67,7 +61,7 @@ namespace HobHubFINAL
                 txtAddItemDescription.Visible = false;
                 txtAddItemName.Visible = false;
                 btnAddItem.Visible = false;
-            }
+            
             
                 //queries to get User info and UserHobbies to populate profile info
                 string userQuery = "SELECT * FROM [Users] WHERE [UserID] = " + userID;
@@ -109,24 +103,26 @@ namespace HobHubFINAL
                             imgProfile.ImageUrl = "~/Images/profiledefault.png";
                         }
                         dr.Close();
+                        dr.Dispose();
                         cmd.Dispose();
                     }
 
                     //get hobby info
-                    cmd = new SqlCommand(hobbiesQuery, conn);
-                    dr = cmd.ExecuteReader();
+                    SqlCommand cmd2 = new SqlCommand(hobbiesQuery, conn);
+                    SqlDataReader dr2 = cmd2.ExecuteReader();
                     string output = string.Empty;
-                    while (dr.Read())
+                    while (dr2.Read())
                     {
-                        output += dr.GetString(0) + "</br>";
+                        output += dr2.GetString(0) + "</br>";
                     }
                     lblHobbies.Text = "Hobbies : </br>" + output +"</br>";
                     cmd.Dispose();
-                    dr.Close();
+                    dr2.Close();
+                    dr2.Dispose();
                 }
                 catch(Exception ex)
                 {
-                    lblUsername.Text = ex.Message;
+                lblUsername.Text = ex.StackTrace;
                 }
                 finally
                 {
@@ -175,7 +171,15 @@ namespace HobHubFINAL
 
         protected void btnAddNewItem_Click(object sender, EventArgs e)
         {
-            Response.Redirect("UserProfileDefault.aspx?update=true");
+            btnAddNewItem.Visible = false;
+            lblAddItems.Visible = true;
+            fileUploadAddNewItem.Visible = true;
+            fileUploadAddNewItem2.Visible = true;
+            fileUploadAddNewItem3.Visible = true;
+            fileUploadAddNewItem4.Visible = true;
+            txtAddItemDescription.Visible = true;
+            txtAddItemName.Visible = true;
+            btnAddItem.Visible = true;
         }
 
         protected void btnAddItem_Click(object sender, EventArgs e)
@@ -239,6 +243,7 @@ namespace HobHubFINAL
                     cmd.Parameters.Add("@Data", SqlDbType.Binary);
                     cmd.Parameters["@Data"].Value = defaultPhoto;
                     int output = cmd.ExecuteNonQuery();
+                    cmd.Dispose();
                     if (output != 1) lblUsername.Text = "Error adding default photo";
                 }
             }

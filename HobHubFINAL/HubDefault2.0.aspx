@@ -23,7 +23,7 @@
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse text-right" id="navbarMenu">
+        <div class="collapse navbar-collapse text-left" id="navbarMenu">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a href="UserProfileDefault.aspx" class="nav-link">myHub</a></li>
                 <li class="nav-item"><a href="InboxDefault.aspx" class="nav-link">Inbox</a></li>
@@ -85,7 +85,7 @@
                                 </EditItemTemplate>
                                 <ItemTemplate>
                                     <asp:Image ID="Image1" runat="server" ImageUrl='<%# "data:Image/png;base64,"
-                    + Convert.ToBase64String((byte[])Eval("Photo")) %>' Height="100" Width="100" />
+                    + Convert.ToBase64String((byte[])Eval("Photo")) %>' Height="150" />
                                 </ItemTemplate>
                                 <ControlStyle Height="200px" />
                             </asp:TemplateField>
