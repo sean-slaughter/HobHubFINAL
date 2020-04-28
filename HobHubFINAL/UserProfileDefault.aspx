@@ -102,9 +102,11 @@
                             </asp:TemplateField>
                         </Columns>
                     </asp:GridView>
-                    <asp:SqlDataSource ID="SqlDataSourceItems" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Item] WHERE ([UserID] = @UserID)">
+                    <asp:SqlDataSource ID="SqlDataSourceItems" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * 
+FROM Item i, Users u
+WHERE u.Username = @Username AND i.UserID = u.UserID">
                         <SelectParameters>
-                            <asp:CookieParameter CookieName="UserID" Name="UserID" Type="Int32" />
+                            <asp:QueryStringParameter Name="Username" QueryStringField="Username" />
                         </SelectParameters>
                     </asp:SqlDataSource>
                 </div>

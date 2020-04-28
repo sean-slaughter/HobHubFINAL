@@ -71,9 +71,17 @@ namespace HobHubFINAL
             
              }
 
+        protected void hpUsername_OnRowDataBound(Object sender, GridViewRowEventArgs e)
+        {
+            
+            e.Row.Cells[3].Text = "Test for load";
+        }
+
         protected void btnPost_Click(object sender, EventArgs e)
         {
            int userID = Convert.ToInt32(Request.Cookies["UserID"].Value);
+            string username = String.Empty;
+
             string caption = txtPost.Text;
             SqlConnection conn = null;
             if (fuPost.HasFile)
@@ -91,13 +99,19 @@ namespace HobHubFINAL
                     {
                         //open sql connection
                         conn.Open();
+                        //get username
+                        string usernameQuery = "SELECT UserName from Users where UserID = " + userID;
+                        using(SqlCommand cmd = new SqlCommand(usernameQuery, conn))
+                        {
+                            username = Convert.ToString(cmd.ExecuteScalar());
+                        }
                         //convert photo to byte array
                         Stream stream = post.InputStream;
                         BinaryReader read = new BinaryReader(stream);
                         byte[] photoBytes = read.ReadBytes((int)stream.Length);
                         //create sql command
-                        string postQuery = "INSERT INTO Posting (UserID, PostedDate, Photo, Caption)" +
-                            " VALUES (" + userID + ", @PostedDate, @Photo, '" + caption + "')";
+                        string postQuery = "INSERT INTO Posting (Username, PostedDate, Photo, Caption)" +
+                            " VALUES ('" + username + "', @PostedDate, @Photo, '" + caption + "')";
                         using(SqlCommand cmd = new SqlCommand(postQuery, conn))
                         {
                             //give values to command parameters

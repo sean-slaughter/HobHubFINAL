@@ -85,11 +85,11 @@
                                 </EditItemTemplate>
                                 <ItemTemplate>
                                     <asp:Image ID="Image1" runat="server" ImageUrl='<%# "data:Image/png;base64,"
-                    + Convert.ToBase64String((byte[])Eval("Photo")) %>'/>
+                    + Convert.ToBase64String((byte[])Eval("Photo")) %>' Height="100" Width="100" />
                                 </ItemTemplate>
                                 <ControlStyle Height="200px" />
                             </asp:TemplateField>
-                            <asp:TemplateField HeaderText="PostedDate" SortExpression="PostedDate">
+                            <asp:TemplateField HeaderText="Posted Date" SortExpression="PostedDate">
                                 <EditItemTemplate>
                                     <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("PostedDate") %>'></asp:TextBox>
                                 </EditItemTemplate>
@@ -98,6 +98,7 @@
                                 </ItemTemplate>
                             </asp:TemplateField>
                             <asp:BoundField DataField="Caption" HeaderText="Caption" SortExpression="Caption" />
+                            <asp:HyperLinkField DataTextField="Username" DataNavigateUrlFields="Username" DataNavigateUrlFormatString="UserProfileDefault.aspx?Username={0}" />
                         </Columns>
                         <EditRowStyle BackColor="#999999" />
                         <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -110,7 +111,7 @@
                         <SortedDescendingCellStyle BackColor="#FFFDF8" />
                         <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
                     </asp:GridView>
-                    <asp:SqlDataSource ID="SqlDataSourceHubPosts" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [PostedDate], [Photo], [Caption] FROM [Posting]"></asp:SqlDataSource>
+                    <asp:SqlDataSource ID="SqlDataSourceHubPosts" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Posting]"></asp:SqlDataSource>
                 </div>
             </div>
         </div>

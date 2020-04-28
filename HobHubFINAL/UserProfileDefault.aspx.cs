@@ -17,11 +17,33 @@ namespace HobHubFINAL
     {
         SqlConnection conn = null;
         string connString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
-        int userID;
+        
+        
+        
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            userID = Convert.ToInt32(Request.Cookies["UserID"].Value);
+            //check for query string
+            int userID = -1;
+            string getUserId = "SELECT UserID from Users WHERE Username = '" + Request.QueryString["Username"] + "'";
+            using(conn = new SqlConnection(connString))
+            {
+                using(SqlCommand cmd = new SqlCommand(getUserId, conn))
+                {
+                    conn.Open();
+                    userID = Convert.ToInt32(cmd.ExecuteScalar());
+                }
+            }
+            int cookie = Convert.ToInt32(Request.Cookies["UserID"].Value);
+            if(userID != cookie && userID != -1)
+            {
+                btnEditInformation.Visible = false;
+                btnAddNewItem.Visible = false;
+            }
+            else
+            {
+                userID = cookie;
+            }
             //check to see if user is trying to add items
             if(Request.QueryString["update"] == "true")
             {
@@ -46,11 +68,10 @@ namespace HobHubFINAL
                 txtAddItemName.Visible = false;
                 btnAddItem.Visible = false;
             }
-            if (Request.Cookies["UserID"].Value != null)
-            {
+            
                 //queries to get User info and UserHobbies to populate profile info
-                string userQuery = "SELECT * FROM [Users] WHERE [UserID] = " + Request.Cookies["UserID"].Value;
-                string hobbiesQuery = "SELECT Name FROM Hobby h, UserHobby u WHERE u.HobbyID = h.HobbyID AND u.UserID = " + Request.Cookies["UserID"].Value;
+                string userQuery = "SELECT * FROM [Users] WHERE [UserID] = " + userID;
+                string hobbiesQuery = "SELECT Name FROM Hobby h, UserHobby u WHERE u.HobbyID = h.HobbyID AND u.UserID = " + userID;
 
 
                 //User info will be stored here for easy access
@@ -111,7 +132,7 @@ namespace HobHubFINAL
                 {
                     conn.Close();
                 }
-            }
+            
         }
 
       
@@ -159,6 +180,7 @@ namespace HobHubFINAL
 
         protected void btnAddItem_Click(object sender, EventArgs e)
         {
+            int userID = Convert.ToInt32(Request.Cookies["UserID"].Value);
             //array of photos to be added to database
             bool photo = false;
             HttpPostedFile[] postedFiles = new HttpPostedFile[4];
