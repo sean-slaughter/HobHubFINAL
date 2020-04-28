@@ -132,6 +132,7 @@ namespace HobHubFINAL
             finally
             {
                 conn.Close();
+                    Response.Redirect("HubDefault2.0.aspx");
             }
         }
     }
